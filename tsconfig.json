@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        // не позволяет использовать переменные без явного указания типа
+        "noImplicitAny": true,
+        // версия ECMAScript, в которую будет компилироваться код
+        "module": "ESNext",
+        // версия ECMAScript, в которую будет компилироваться код
+        "target": "es5",
+        "jsx": "react",
+        // компилятор будет обрабатыввать не только TS, но и JS
+        "allowJs": true,
+        "moduleResolution": "node",
+        // позволяет работать с пакетами, которые используют common js как с обычными пакетами с помоью import
+        "esModuleInterop": true,
+        // если библиотека не имеет default export, то при true -> import React from 'react';
+        "allowSyntheticDefaultImports": true
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    }
+}
