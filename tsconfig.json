@@ -7,10 +7,12 @@
         "module": "ESNext",
         // версия ECMAScript, в которую будет компилироваться код
         "target": "es5",
-        "jsx": "react",
+        "jsx": "react-jsx",
         // компилятор будет обрабатыввать не только TS, но и JS
         "allowJs": true,
         "moduleResolution": "node",
+        // Для абсолютных путей
+        "baseUrl": ".",
         // позволяет работать с пакетами, которые используют common js как с обычными пакетами с помоью import
         "esModuleInterop": true,
         // если библиотека не имеет default export, то при true -> import React from 'react';
