@@ -1,0 +1,12 @@
+// импортируем все файлы в глобальный
+@import './variables/global';
+@import './themes/dark';
+@import './themes/normal';
+@import './reset';
+.app {
+    // использование переменных: var(имя переменной)
+    font: var(--font-m);
+    background: var(--bg-color);
+    color: var(--primary-color);
+    min-height: 100vh;
+}

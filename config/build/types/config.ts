@@ -6,6 +6,7 @@ export interface BuildPaths {
     entry: string; // путь для точки входа
     output: string; // путь для результата сборки
     html: string; // путь для html файла
+    src: string; // пусть до src
 }
 
 // Тип для опций сборки

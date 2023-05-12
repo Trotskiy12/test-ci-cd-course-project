@@ -13,6 +13,10 @@
         "moduleResolution": "node",
         // Для абсолютных путей
         "baseUrl": ".",
+        // все импорты и экспорты будут идти из src
+        "paths": {
+            "*": ["./src/*"]
+        },
         // позволяет работать с пакетами, которые используют common js как с обычными пакетами с помоью import
         "esModuleInterop": true,
         // если библиотека не имеет default export, то при true -> import React from 'react';

@@ -17,7 +17,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             rules: buildLoaders(options)
         },
         // указываем расширение тех файлов, расширение которых мы не будем указывать
-        resolve: buildResolvers(),
+        resolve: buildResolvers(options),
         // куда и как будет производится сборка 
         output: {
             filename: '[name].[contenthash].js',
