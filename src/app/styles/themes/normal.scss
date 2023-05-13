@@ -2,8 +2,14 @@
 // навешивыем на класс app
 .app.light {
     --bg-color: #e8e8ea;
+    --inverted-bg-color: #090949;
+
     // цвет шрифта для акцента (заголовки)
     --primary-color: #0232c2;
     // обычный текст
     --secondary-color: #0449e0;
+    // цвет шрифта для акцента (заголовки)
+    --inverted-primary-color: #049604;
+    // обычный текст
+    --inverted-secondary-color: #04ff04;
 }

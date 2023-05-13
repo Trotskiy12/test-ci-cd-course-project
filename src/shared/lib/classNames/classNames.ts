@@ -7,10 +7,11 @@ type Mods = Record<string, boolean | string>;
  * @param mods - модификаторы (hovered)
  * @param additional - второстепенные классы
  */
-export function classNames (cls: string, mods: Mods, additional: string[]): string {
+export function classNames (cls: string, mods: Mods = {}, additional: string[] = []): string {
     return [
         cls,
-        ...additional,
+        // избавимся от undefined
+        ...additional.filter(Boolean),
         // получаем ключи и значения из объекта mods
         Object.entries(mods)
             // оставим только те элементы, у которых value: true
