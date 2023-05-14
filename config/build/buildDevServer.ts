@@ -8,6 +8,7 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
         // автоматически открывает приложение в браузере
         open: true,
         // позволяет проксировать запросы через index.html
-        historyApiFallback: true
+        historyApiFallback: true,
+        hot: true
     }
 }

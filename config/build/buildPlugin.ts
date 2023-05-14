@@ -4,7 +4,7 @@ import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 // Функция для плагинов
-export function buildPlugin({paths}: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugin({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
         // прогресс сборки
         new webpack.ProgressPlugin(),
@@ -16,6 +16,12 @@ export function buildPlugin({paths}: BuildOptions): webpack.WebpackPluginInstanc
             filename: 'css/[name].[contenthash:8].css',
             // для чанков, которые будут асинхронно подгружаться
             chunkFilename: 'css/[name].[contenthash:8].css'
-        })
+        }),
+        // плагин - прокидывать в приложение глобальные переменные
+        new webpack.DefinePlugin({
+            __IS_DEV__: JSON.stringify(isDev)
+        }),
+        // обновить приложение без обновления страницы
+        new webpack.HotModuleReplacementPlugin()
     ]
 }
