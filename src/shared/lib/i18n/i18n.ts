@@ -9,19 +9,18 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        // язык по умолчанию
+        // Язык по умолчанию
         fallbackLng: 'en',
-        // дебаг в консоль
+        // Дебаг в консоль
         debug: __IS_DEV__,
 
         interpolation: {
-            escapeValue: false, // not needed for react as it escapes by default
+            escapeValue: false, // Not needed for react as it escapes by default
         },
 
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json',
-        }
+        },
     });
-
 
 export default i18n;

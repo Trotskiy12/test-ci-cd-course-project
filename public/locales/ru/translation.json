@@ -1,4 +1,8 @@
 {
     "test": "Тестовый",
-    "change-lng": "Русский"
+    "change-lng": "Русский",
+    "toggle": "toggle",
+    "loading": "Загрузка...",
+    "not-found-page": "Страница не найдена",
+    "bug-button": "Сделай баг!"
 }

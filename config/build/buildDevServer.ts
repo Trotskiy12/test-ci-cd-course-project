@@ -1,14 +1,14 @@
-import { BuildOptions } from "./types/config";
-// импортируем тип для конфигурации
-import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
+import { type BuildOptions } from './types/config';
+// Импортируем тип для конфигурации
 
 export function buildDevServer(options: BuildOptions): DevServerConfiguration {
     return {
         port: options.port,
-        // автоматически открывает приложение в браузере
+        // Автоматически открывает приложение в браузере
         open: true,
-        // позволяет проксировать запросы через index.html
+        // Позволяет проксировать запросы через index.html
         historyApiFallback: true,
-        hot: true
-    }
+        hot: true,
+    };
 }

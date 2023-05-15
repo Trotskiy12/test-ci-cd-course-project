@@ -1,27 +1,36 @@
-import { AboutPage } from "pages/AboutPage"
-import { MainPage } from "pages/MainPage"
-import { RouteProps } from "react-router-dom"
+import { AboutPage } from 'pages/AboutPage';
+import { MainPage } from 'pages/MainPage';
+import { NotFoundPage } from 'pages/NotFoundPage';
+import { type RouteProps } from 'react-router-dom';
 
-// список роутов, который находится в приложении
+// Список роутов, который находится в приложении
 export enum AppRoutes {
-    MAIN = 'main',
-    ABOUT = 'about'
+	MAIN = 'main',
+	ABOUT = 'about',
+    NOT_FOUND = 'not_found'
 }
 
-// для каждого маршрута из AppRoutes укажем путь до компонентов
+// Для каждого маршрута из AppRoutes укажем путь до компонентов
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
-    [AppRoutes.ABOUT]: '/about'
-}
+    [AppRoutes.ABOUT]: '/about',
+    // располагаем в конце списка, так как звездочка будет обработывать все пути
+    // которые не отработали выше
+    [AppRoutes.NOT_FOUND]: '*',
+};
 
-// объявляем роуты
+// Объявляем роуты
 export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.MAIN]: {
         path: RoutePath.main,
-        element: <MainPage />
+        element: <MainPage />,
     },
     [AppRoutes.ABOUT]: {
         path: RoutePath.about,
-        element: <AboutPage />
+        element: <AboutPage />,
     },
-}
+    [AppRoutes.NOT_FOUND]: {
+        path: RoutePath.not_found,
+        element: <NotFoundPage />,
+    },
+};

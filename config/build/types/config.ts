@@ -1,24 +1,24 @@
-// тип для мода сборки
+// Тип для мода сборки
 export type BuildMode = 'production' | 'development';
 
-// тип для путей сборки
-export interface BuildPaths {
-    entry: string; // путь для точки входа
-    output: string; // путь для результата сборки
-    html: string; // путь для html файла
-    src: string; // пусть до src
-}
+// Тип для путей сборки
+export type BuildPaths = {
+	entry: string; // Путь для точки входа
+	output: string; // Путь для результата сборки
+	html: string; // Путь для html файла
+	src: string; // Пусть до src
+};
 
 // Тип для опций сборки
-export interface BuildOptions { 
-    mode: BuildMode;
-    paths: BuildPaths;
-    isDev: boolean;
-    port: number;
-}
+export type BuildOptions = {
+	mode: BuildMode;
+	paths: BuildPaths;
+	isDev: boolean;
+	port: number;
+};
 
-// тип для переменных окружения
-export interface BuildEnv {
-    mode: BuildMode
-    port: number;
-}
+// Тип для переменных окружения
+export type BuildEnv = {
+	mode: BuildMode;
+	port: number;
+};

@@ -1,4 +1,8 @@
 {
     "test": "Test",
-    "change-lng": "English"
+    "change-lng": "English",
+    "toggle": "toggle",
+    "loading": "Loading...",
+    "not-found-page": "Page not found",
+    "bug-button": "BUG!"
 }

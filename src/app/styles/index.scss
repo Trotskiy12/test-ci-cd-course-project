@@ -3,6 +3,7 @@
 @import "./themes/dark";
 @import "./themes/normal";
 @import "./reset";
+
 .app {
     // использование переменных: var(имя переменной)
     font: var(--font-m);

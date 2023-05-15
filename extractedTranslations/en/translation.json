@@ -1,5 +1,13 @@
 {
   "about-page": "about-page",
+  "bug-button": "bug-button",
   "change-lng": "change-lng",
-  "main-page": "main-page"
+  "error-msg": "error-msg",
+  "loading": "loading",
+  "main-page": "main-page",
+  "nav-about": "nav-about",
+  "nav-main": "nav-main",
+  "not-found-page": "not-found-page",
+  "reload": "reload",
+  "toggle": "toggle"
 }
