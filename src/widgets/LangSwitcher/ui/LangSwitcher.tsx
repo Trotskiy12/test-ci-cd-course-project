@@ -10,7 +10,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
     // Инпортируем функцию t и объект i18n
     const { t, i18n } = useTranslation();
 
-    const toggle = () => {
+    const toggle = async () => {
         // Изменяем текущий язык в i18n
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
     };

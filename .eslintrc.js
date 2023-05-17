@@ -47,7 +47,10 @@ module.exports = {
         'import/order': 'off',
         'i18next/no-literal-string': [
             'error',
-            { markupOnly: true, ignoreAttribute: ['to'] },
+            {
+                markupOnly: true,
+                ignoreAttribute: ['to', 'data-testid'],
+            },
         ],
         'linebreak-style': 'off',
         'max-len': ['error', { code: 100, ignoreComments: true }],
@@ -55,4 +58,10 @@ module.exports = {
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [{
+        files: ['**/src/**/*.test.{ts,tsx}'],
+        rules: {
+            'i18next/no-literal-string': 'off',
+        },
+    }],
 };
