@@ -24,8 +24,8 @@ export function buildPlugin({ paths, isDev }: BuildOptions): webpack.WebpackPlug
         }),
         // Обновить приложение без обновления страницы
         new webpack.HotModuleReplacementPlugin(),
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }),
+        // new BundleAnalyzerPlugin({
+        //     openAnalyzer: false,
+        // }),
     ];
 }

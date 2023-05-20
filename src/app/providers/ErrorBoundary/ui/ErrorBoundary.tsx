@@ -36,7 +36,8 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
             return <Suspense fallback=""><PageError /></Suspense>;
         }
 
-        return children;
+        // eslint-disable-next-line react/jsx-no-useless-fragment
+        return <>{children}</>;
     }
 }
 
