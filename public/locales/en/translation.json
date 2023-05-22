@@ -1,8 +1,13 @@
 {
     "test": "Test",
     "change-lng": "English",
+    "short-lng": "EN",
     "toggle": "toggle",
     "loading": "Loading...",
     "not-found-page": "Page not found",
-    "bug-button": "BUG!"
+    "bug-button": "BUG!",
+    "about-page": "About us",
+    "main-page": "Main page",
+    "nav-about": "About us",
+    "nav-main": "Main page"
 }

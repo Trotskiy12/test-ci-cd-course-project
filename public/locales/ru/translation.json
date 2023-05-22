@@ -1,8 +1,13 @@
 {
     "test": "Тестовый",
     "change-lng": "Русский",
+    "short-lng": "RU",
     "toggle": "toggle",
     "loading": "Загрузка...",
     "not-found-page": "Страница не найдена",
-    "bug-button": "Сделай баг!"
+    "bug-button": "Сделай баг!",
+    "about-page": "О сайте",
+    "nav-about": "О сайте",
+    "main-page": "Главная",
+    "nav-main": "Главная"
 }
