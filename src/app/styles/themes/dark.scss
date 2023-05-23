@@ -1,18 +1,8 @@
-// стили для темной темы
-// навешиваем на класс app
 .app.dark {
     --bg-color: #090949;
     --inverted-bg-color: #e8e8ea;
-
-    // цвет шрифта для акцента (заголовки)
     --primary-color: #04ff04;
-
-    // обычный текст
     --secondary-color: #049604;
-
-    // цвет шрифта для акцента (заголовки)
     --inverted-primary-color: #0232c2;
-
-    // обычный текст
     --inverted-secondary-color: #0452ff;
 }

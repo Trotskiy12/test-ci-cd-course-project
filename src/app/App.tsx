@@ -1,4 +1,3 @@
-import './styles/index.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from './providers/router';
 import { useTheme } from './providers/ThemeProvider';
@@ -8,7 +7,7 @@ import { Suspense } from 'react';
 
 export const App = () => {
     const { theme } = useTheme();
-
+    console.log(theme);
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">

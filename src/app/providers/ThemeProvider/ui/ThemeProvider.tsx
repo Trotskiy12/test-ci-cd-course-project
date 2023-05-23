@@ -11,14 +11,22 @@ import {
 */
 const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme
     || Theme.LIGHT;
+
+interface ThemeProviderProps {
+    initialTheme?: Theme;
+}
 /*
     Добавим FC - скажем, что ThemeProvider Functional Component
     Сразу станет доступен props children
 */
-const ThemeProvider: FC = ({ children }) => {
+const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+    const {
+        initialTheme,
+        children,
+    } = props;
     // LocalStorage всегда вернёт сроку,
     // а useState ждет Theme необходимо воспользоваться кастом к типу
-    const [theme, setTheme] = useState<Theme>(defaultTheme);
+    const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
     /*
         UseMemo - мемоизировать значения объекта,
         чтобы каждый раз не создавался новый,
