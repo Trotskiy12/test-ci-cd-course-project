@@ -14,7 +14,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         entry: paths.entry,
         module: {
             // Конфигурируем loader, для обработки файлов, которые выходят за рамки JS
-            rules: buildLoaders(options),
+            rules: buildLoaders(),
         },
         // Указываем расширение тех файлов, расширение которых мы не будем указывать
         resolve: buildResolvers(options),
