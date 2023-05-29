@@ -10,10 +10,15 @@
     color: var(--primary-color);
 }
 
-.modal.dark {
-    --bg-color: #090949;
-    --primary-color: #04ff04;
-}
+
+/*
+    В данном фрагменте кода происходит переопределенние глобальных переменных
+    Так делать нельзя! Переменные должны быть в одном месте
+    .modal.dark {
+        --bg-color: #090949;
+        --primary-color: #04ff04;
+    }
+*/
 
 .overlay {
     width: 100%;
@@ -37,7 +42,6 @@
     pointer-events: auto;
     opacity: 1;
     z-index: var(--modal-z-index);
-
     .content {
         transform: scale(1);
     }
