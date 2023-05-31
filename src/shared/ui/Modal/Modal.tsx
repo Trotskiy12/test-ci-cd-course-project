@@ -12,21 +12,35 @@ interface ModalProps {
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
 
+// props.lazy -  загрузка модалки лениво - понадобиться для того случае,
+// если какой-то компонент придется подгружать асинхронно - уменьшение бандла
 export const Modal = (props: ModalProps) => {
     const {
         className,
         children,
         isOpen,
         onClose,
+        lazy,
     } = props;
 
     const [isClosing, setIsClosing] = useState(false);
+    // будет отвечать, вмонтированна у нас модалка в дом-дерево или нет
+    const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
     const { theme } = useTheme();
+
+    useEffect(() => {
+        // проверка: если открыт компонент - то мы говорим, что он уже вмонтировался в дерево
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
+
     const closeHandler = useCallback(() => {
         if (onClose) {
             setIsClosing(true);
@@ -64,6 +78,12 @@ export const Modal = (props: ModalProps) => {
         [cls.isClosing]: isClosing,
         [cls[theme]]: true,
     };
+
+    // если у нас ленивая загрузка и модалка не вмонтированна в дом-дерево
+    // то возвращаем null - не отрисовываем модалку
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>

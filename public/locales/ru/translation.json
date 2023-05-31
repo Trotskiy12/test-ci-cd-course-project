@@ -9,5 +9,8 @@
     "about-page": "О сайте",
     "nav-about": "О сайте",
     "main-page": "Главная",
-    "nav-main": "Главная"
+    "nav-main": "Главная",
+    "sing-in": "Войти",
+    "login-label": "Введите логин",
+    "password-label": "Введите пароль"
 }

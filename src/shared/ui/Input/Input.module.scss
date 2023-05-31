@@ -1,0 +1,19 @@
+.Input {
+    display: flex;
+}
+
+.placeholder {
+    margin-right: 5px;
+}
+
+.input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--primary-color);
+    width: 100%;
+
+    &:focus {
+        outline: none;
+    }
+}

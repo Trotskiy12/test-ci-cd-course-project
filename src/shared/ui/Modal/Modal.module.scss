@@ -10,7 +10,6 @@
     color: var(--primary-color);
 }
 
-
 /*
     В данном фрагменте кода происходит переопределенние глобальных переменных
     Так делать нельзя! Переменные должны быть в одном месте
@@ -42,6 +41,7 @@
     pointer-events: auto;
     opacity: 1;
     z-index: var(--modal-z-index);
+
     .content {
         transform: scale(1);
     }

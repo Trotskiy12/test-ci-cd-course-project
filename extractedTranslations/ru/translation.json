@@ -6,10 +6,13 @@
   "error-msg": "error-msg",
   "increment": "increment",
   "loading": "loading",
+  "login-label": "login-label",
   "main-page": "main-page",
   "nav-about": "nav-about",
   "nav-main": "nav-main",
   "not-found-page": "not-found-page",
+  "password-label": "password-label",
   "reload": "reload",
+  "sing-in": "sing-in",
   "toggle": "toggle"
 }
