@@ -69,6 +69,7 @@ module.exports = {
         rules: {
             'i18next/no-literal-string': 'off',
             'max-len': 'off',
+            'react/jsx-props-no-spreading': 'off',
         },
     }],
 };
