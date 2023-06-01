@@ -12,5 +12,7 @@
     "nav-main": "Главная",
     "sing-in": "Войти",
     "login-label": "Введите логин",
-    "password-label": "Введите пароль"
+    "password-label": "Введите пароль",
+    "login-form-label": "Форма авторизации",
+    "error-auth": "Вы ввели неправильный логин или пароль"
 }

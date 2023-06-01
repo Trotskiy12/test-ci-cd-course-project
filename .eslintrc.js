@@ -54,7 +54,7 @@ module.exports = {
             },
         ],
         'linebreak-style': 'off',
-        'max-len': ['error', { code: 100, ignoreComments: true }],
+        'max-len': ['error', { code: 120, ignoreComments: true }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks

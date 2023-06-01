@@ -18,8 +18,8 @@
         "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
         "test:ui:json": "node scripts/generate-visual-json-report.js",
         "test:ui:html": "npx reg-cli --from .loki/report.json --report .loki/report.html",
-        "storybook": "start-storybook -p 6006 -c ./config/storybook -s ./public/locales",
-        "storybook:build": "build-storybook -c ./config/storybook  -s ./public",
+        "storybook": "start-storybook -p 6006 -c ./config/storybook",
+        "storybook:build": "build-storybook -c ./config/storybook",
         "prepare": "husky install"
     },
     "repository": {
@@ -90,6 +90,7 @@
     },
     "dependencies": {
         "@reduxjs/toolkit": "^1.8.0",
+        "axios": "^0.26.1",
         "eslint-plugin-react-hooks": "^4.3.0",
         "i18next": "^21.6.11",
         "i18next-browser-languagedetector": "^6.1.3",

@@ -10,5 +10,9 @@
     "main-page": "Main page",
     "nav-about": "About us",
     "nav-main": "Main page",
-    "sing-in": "Sing in"
+    "sing-in": "Sing in",
+    "login-label": "Login",
+    "password-label": "Password",
+    "login-form-label": "Auth form",
+    "error-auth": "Uncorrect login or password"
 }
