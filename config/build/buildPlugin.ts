@@ -6,13 +6,13 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 // Функция для плагинов
 export function buildPlugin({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
-    return [
-        // Прогресс сборки
-        new webpack.ProgressPlugin(),
+    const plugins = [
         // Работа с HTML
         new HtmlWebpackPlugin({
             template: paths.html,
         }),
+        // Прогресс сборки
+        new webpack.ProgressPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
             // Для чанков, которые будут асинхронно подгружаться
@@ -22,10 +22,16 @@ export function buildPlugin({ paths, isDev }: BuildOptions): webpack.WebpackPlug
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
-        // Обновить приложение без обновления страницы
-        new webpack.HotModuleReplacementPlugin(),
-        // new BundleAnalyzerPlugin({
-        //     openAnalyzer: false,
-        // }),
     ];
+
+    if (isDev) {
+        // Обновить приложение без обновления страницы
+        plugins.push(new webpack.HotModuleReplacementPlugin());
+        // Анализатор bundle
+        plugins.push(new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+        }));
+    }
+
+    return plugins;
 }
