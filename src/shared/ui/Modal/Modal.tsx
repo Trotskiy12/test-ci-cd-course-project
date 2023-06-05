@@ -84,7 +84,7 @@ export const Modal = (props: ModalProps) => {
     if (lazy && !isMounted) {
         return null;
     }
-
+    // В этот компоненте memo не имеет смысла, так как children всегда компонент с древовидной структурой
     return (
         <Portal>
             <div className={classNames(cls.modal, mods, [className, theme, 'app_modal'])}>

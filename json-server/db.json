@@ -31,6 +31,13 @@
         "password": "123"
     }],
     "profile": {
-        "name": "typicode"
+        "first": "Даниил",
+        "lastname": "Луценко",
+        "age": 22,
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Petrozavodsk",
+        "username": "admin",
+        "avatar": "https://admindagency.com/wp-content/uploads/2023/03/DungeonSynth_MINI_230303_hp.jpg"
     }
 }

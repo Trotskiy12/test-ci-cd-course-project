@@ -1,5 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ButtonHTMLAttributes, FC } from 'react';
+import {
+    ButtonHTMLAttributes, ReactNode, memo,
+} from 'react';
 import cls from './Button.module.scss';
 
 export enum ThemeButton {
@@ -22,9 +24,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     square?: boolean;
     size?: ButtonSize;
     disabled?: boolean;
+    children?: ReactNode;
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button = memo((props: ButtonProps) => {
     const {
         className,
         children,
@@ -52,4 +55,11 @@ export const Button: FC<ButtonProps> = (props) => {
             {children}
         </button>
     );
-};
+});
+
+// Для каких компонентов лучше не использовать memo?
+// Для тех, у которых есть children props
+// Так как может быть древовидная структура - хранить дорого + memo не поможет, если содержимое будет меняться
+// НО! В кнопке children - чаще всего примитив, например строка, сравнивать легко и хранить дешево
+// Древовидная структура - это объект, объекты могут менять ссылку, даже два объекта, могут быть одинаковыми, но они хранят разные ссылки в памяти
+// А строка - значение

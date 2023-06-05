@@ -1,12 +1,15 @@
 import { AboutPage } from 'pages/AboutPage';
 import { MainPage } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
+import { ProfilePage } from 'pages/ProfilePage';
 import { type RouteProps } from 'react-router-dom';
 
 // Список роутов, который находится в приложении
 export enum AppRoutes {
 	MAIN = 'main',
 	ABOUT = 'about',
+    PROFILE = 'profile',
+    // last
     NOT_FOUND = 'not_found'
 }
 
@@ -14,6 +17,7 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.ABOUT]: '/about',
+    [AppRoutes.PROFILE]: '/profile',
     // располагаем в конце списка, так как звездочка будет обработывать все пути
     // которые не отработали выше
     [AppRoutes.NOT_FOUND]: '*',
@@ -29,6 +33,11 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
         path: RoutePath.about,
         element: <AboutPage />,
     },
+    [AppRoutes.PROFILE]: {
+        path: RoutePath.profile,
+        element: <ProfilePage />,
+    },
+    // last
     [AppRoutes.NOT_FOUND]: {
         path: RoutePath.not_found,
         element: <NotFoundPage />,
