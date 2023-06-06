@@ -5,7 +5,7 @@ import { BuildOptions } from './types/config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 // Функция для плагинов
-export function buildPlugin({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugin({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
         // Работа с HTML
         new HtmlWebpackPlugin({
@@ -21,6 +21,7 @@ export function buildPlugin({ paths, isDev }: BuildOptions): webpack.WebpackPlug
         // Плагин - прокидывать в приложение глобальные переменные
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
+            __API__: JSON.stringify(apiUrl),
         }),
     ];
 

@@ -7,7 +7,7 @@ type Mods = Record<string, boolean | string>;
  * @param mods - модификаторы (hovered)
  * @param additional - второстепенные классы
  */
-export function classNames(cls: string, mods: Mods = {}, additional: string[] = []): string {
+export function classNames(cls: string, mods: Mods = {}, additional: Array<string | undefined> = []): string {
     return [
         cls,
         // Избавимся от undefined

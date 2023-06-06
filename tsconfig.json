@@ -10,6 +10,8 @@
         "jsx": "react-jsx",
         // компилятор будет обрабатыввать не только TS, но и JS
         "allowJs": true,
+        // включение строго режима
+        "strict": true,
         "moduleResolution": "node",
         // Для абсолютных путей
         "baseUrl": ".",

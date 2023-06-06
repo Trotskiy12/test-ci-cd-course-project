@@ -3,6 +3,7 @@
   "bug-button": "bug-button",
   "change-lng": "change-lng",
   "decrement": "decrement",
+  "edit": "edit",
   "error": "error",
   "error-auth": "error-auth",
   "error-msg": "error-msg",
@@ -11,6 +12,7 @@
   "login-form-label": "login-form-label",
   "login-label": "login-label",
   "main-page": "main-page",
+  "name": "name",
   "nav-about": "nav-about",
   "nav-main": "nav-main",
   "not-found-page": "not-found-page",
@@ -18,5 +20,7 @@
   "profile-title": "profile-title",
   "reload": "reload",
   "sing-in": "sing-in",
+  "surname": "surname",
+  "title": "title",
   "toggle": "toggle"
 }

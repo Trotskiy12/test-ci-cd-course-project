@@ -9,16 +9,18 @@ export type BuildPaths = {
 	src: string; // Пусть до src
 };
 
+// Тип для переменных окружения
+export type BuildEnv = {
+	mode: BuildMode;
+	port: number;
+	apiUrl: string;
+};
+
 // Тип для опций сборки
 export type BuildOptions = {
 	mode: BuildMode;
 	paths: BuildPaths;
 	isDev: boolean;
 	port: number;
-};
-
-// Тип для переменных окружения
-export type BuildEnv = {
-	mode: BuildMode;
-	port: number;
+	apiUrl: string;
 };
