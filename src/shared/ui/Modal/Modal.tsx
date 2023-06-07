@@ -1,6 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 import React, {
+    MutableRefObject,
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Portal } from 'shared/ui/Portal/Portal';
@@ -30,8 +31,9 @@ export const Modal = (props: ModalProps) => {
 
     const [isClosing, setIsClosing] = useState(false);
     // будет отвечать, вмонтированна у нас модалка в дом-дерево или нет
+    // useRef работает с MutableRefObject<t> - можно изменять и RefObject<T> - readonly
     const [isMounted, setIsMounted] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
     const { theme } = useTheme();
 
     useEffect(() => {
@@ -44,6 +46,7 @@ export const Modal = (props: ModalProps) => {
     const closeHandler = useCallback(() => {
         if (onClose) {
             setIsClosing(true);
+            // current тут read-only, так как ref может быть мутабельным и имутабельным
             timerRef.current = setTimeout(() => {
                 onClose();
                 setIsClosing(false);
@@ -73,7 +76,7 @@ export const Modal = (props: ModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
         [cls[theme]]: true,

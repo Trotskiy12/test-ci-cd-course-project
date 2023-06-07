@@ -5,6 +5,6 @@ export const $api = axios.create({
     // eslint-disable-next-line no-undef
     baseURL: __API__,
     headers: {
-        authorization: localStorage.getItem(LOCAL_STORAGE_THEME_KEY),
+        authorization: localStorage.getItem(LOCAL_STORAGE_THEME_KEY) || '',
     },
 });

@@ -1,5 +1,5 @@
 // Record<key, value> -> объект с парами ключ-значение
-type Mods = Record<string, boolean | string>;
+export type Mods = Record<string, boolean | string | undefined>;
 
 /*
  * ClassNames - функция для склеивания классов модов и так далее

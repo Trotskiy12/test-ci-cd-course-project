@@ -13,12 +13,13 @@ export function useTheme(): useThemeResult {
     const toggleTheme = () => {
         const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
         // Изменяем состояние
-        setTheme(newTheme);
+        // фунцкия может быть undifined , так как контекст инициализируется не сразу
+        setTheme?.(newTheme);
         // если в body добавить в className тему, то мы избавнимся от постоянного навешивания в additionals theme
         document.body.className = newTheme;
         // Сохраняем тему в localStorage
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
 
-    return { theme, toggleTheme };
+    return { theme: theme || Theme.LIGHT, toggleTheme };
 }
