@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ProfileCard, fetchProfileData, profileReducer } from 'entities/Profile';
 import { useEffect } from 'react';
@@ -14,7 +14,7 @@ interface ProfilePageProps {
 }
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
-    const { t } = useTranslation();
+    // const { t } = useTranslation();
     const dispatch = useAppDispacth();
 
     useEffect(() => {

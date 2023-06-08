@@ -8,8 +8,6 @@ export type ReducersList = {
     [name in StateSchemaKey]?: Reducer
 }
 
-type ReducersListEntry = [StateSchemaKey, Reducer];
-
 interface DynamicModuleLoaderProps {
     reducers: ReducersList;
     removeAfterUnmount?: boolean;
@@ -24,15 +22,16 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
 
     useEffect(() => {
         // При использовании ReducersList внутри forEach мы будем терять StateSchemaKey
-        Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
-            store.reducerManager.add(name, reducer);
+        // Object.entries, когда достаёт ключи их объекта, воспринимает их как string
+        Object.entries(reducers).forEach(([name, reducer]) => {
+            store.reducerManager.add(name as StateSchemaKey, reducer);
             dispatch({ type: `@@INIT ${name} REDUCER` });
         });
         // в момент монтирования компонента, с помощью reducerManager'a будем добавлять в корневой reducer loginReducer
         return () => {
             if (removeAfterUnmount) {
-                Object.entries(reducers).forEach(([name]: ReducersListEntry) => {
-                    store.reducerManager.remove(name);
+                Object.entries(reducers).forEach(([name]) => {
+                    store.reducerManager.remove(name as StateSchemaKey);
                     dispatch({ type: `@@DESTROY ${name} REDUCER` });
                 });
                 // при размонтировании компонента этот reducer мы удаляем
