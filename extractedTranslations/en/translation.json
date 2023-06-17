@@ -1,13 +1,17 @@
 {
   "about-page": "about-page",
+  "age": "age",
   "bug-button": "bug-button",
+  "cancel": "cancel",
   "change-lng": "change-lng",
+  "city": "city",
   "decrement": "decrement",
   "edit": "edit",
   "error": "error",
   "error-auth": "error-auth",
   "error-msg": "error-msg",
   "increment": "increment",
+  "link-avatar": "link-avatar",
   "loading": "loading",
   "login-form-label": "",
   "login-label": "login-label",
@@ -19,8 +23,12 @@
   "password-label": "password-label",
   "profile-title": "profile-title",
   "reload": "reload",
+  "save": "save",
+  "select-country": "",
+  "select-currency": "select-currency",
   "sing-in": "sing-in",
   "surname": "surname",
   "title": "title",
-  "toggle": "toggle"
+  "toggle": "toggle",
+  "username": "username"
 }
