@@ -10,5 +10,10 @@
     "username": "Имя пользоватля",
     "link-avatar": "Ссылка на аватар",
     "select-currency": "Выберете валюту",
-    "select-country": "Выберете страну"
+    "select-country": "Выберете страну",
+    "server-error": "Серверна ошибка при сохранении данных",
+    "incorrect-age": "Некорректный возраст",
+    "incorrect-userdata": "Имя и фамилия обязательны",
+    "incorrect-country": "Некорректная страна",
+    "no-data": "Данные не указаны"
 }

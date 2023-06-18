@@ -1,6 +1,15 @@
 import { Country } from 'entities/Country/model/types/country';
 import { Currency } from 'entities/Currency/model/types/currency';
 
+// enum для ошибок
+export enum ValidateProfileError {
+    INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',
+    INCORRECT_AGE = 'INCORRECT_AGE',
+    INCORRECT_COUNTRY = 'INCORRECT_COUNTRY',
+    NO_DATA = 'NO_DATA',
+    SERVER_ERROR = 'SERVER_ERROR'
+}
+
 export interface Profile {
     first?: string,
     lastname?: string,
@@ -19,5 +28,7 @@ export interface ProfileSchema {
     form?: Profile
     isLoading: boolean,
     error?: string,
-    readonly: boolean
+    readonly: boolean,
+    // ошибок может быть несколько - так что это поле массив
+    validateError?: ValidateProfileError[];
 }
