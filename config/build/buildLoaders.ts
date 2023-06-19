@@ -1,33 +1,18 @@
 import type webpack from 'webpack';
 import { buildCssLoader } from './loaders/buildCssLoader';
+import { type BuildOptions } from './types/config';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
-export function buildLoaders(): webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+    const { isDev } = options;
     const svgLoader = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     };
 
-    const babelLoader = {
-        test: /\.(js|ts|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-                plugins: [
-                    [
-                        'i18next-extract',
-                        {
-                            locales: ['ru', 'en'],
-                            keyAsDefaultValue: true,
-                        },
-                    ],
-                ],
-            },
-        },
-    };
+    const babelLoader = buildBabelLoader(options);
 
-    const cssLoader = buildCssLoader(true);
+    const cssLoader = buildCssLoader(isDev);
 
     // Порядок при котором лоадеры возвращаются в массиве - имеет значение
     // лучшая практика - выносить лоадер в переменную, чтобы проще отследить последовательность

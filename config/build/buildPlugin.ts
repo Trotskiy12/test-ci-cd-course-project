@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
 // Функция для плагинов
 export function buildPlugin({
@@ -29,6 +30,7 @@ export function buildPlugin({
     ];
 
     if (isDev) {
+        plugins.push(new ReactRefreshWebpackPlugin());
         // Обновить приложение без обновления страницы
         plugins.push(new webpack.HotModuleReplacementPlugin());
         // Анализатор bundle
