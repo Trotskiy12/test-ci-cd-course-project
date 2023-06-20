@@ -24,6 +24,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             path: paths.output,
             // Удаляем старые файл с предыдущей сборки
             clean: true,
+            publicPath: '/',
         },
         plugins: buildPlugin(options),
         // Позволяет четко видеть, где в коде ошибка, так как
