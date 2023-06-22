@@ -9,6 +9,7 @@ interface ArticlePageProps {
 }
 
 const ArticlePage = ({ className }: ArticlePageProps) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { t } = useTranslation('article');
     return (
         <div className={classNames(cls.ArticlePage, {}, [className])}>

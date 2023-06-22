@@ -19,7 +19,6 @@ export const articleDetailsSlice = createSlice({
                 state.error = undefined;
                 state.isLoading = true;
             })
-            // Данные, который мы возращали из AsyncThunk (loginByUsername) попадают в action
             .addCase(fetchArticleById.fulfilled, (state, action: PayloadAction<Article>) => {
                 state.isLoading = false;
                 state.data = action.payload;
