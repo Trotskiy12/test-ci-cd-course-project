@@ -119,13 +119,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://thedungeonindeepspace.files.wordpress.com/2020/12/img_3600.jpg?w=700"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://thedungeonindeepspace.files.wordpress.com/2020/12/img_3600.jpg?w=700"
     }
   ],
   "profile": {
