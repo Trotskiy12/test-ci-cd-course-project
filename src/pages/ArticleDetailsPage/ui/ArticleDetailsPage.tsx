@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleDetailsPage.module.scss';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from 'entities/Article';
@@ -14,6 +14,8 @@ import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/s
 import { useAppDispacth } from 'shared/lib/hooks/useAppDispatch';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { AddCommentForm } from 'features/addCommentForm';
+import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -32,6 +34,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const comment = useSelector(getArticleComments.selectAll);
     const dispatch = useAppDispacth();
 
+    const onSendComment = useCallback((text: string) => {
+        dispatch(addCommentForArticle(text));
+    }, [dispatch]);
+
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
     });
@@ -49,6 +55,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             <div className={classNames(cls.ArticlePage, {}, [className])}>
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title="Комментарии" />
+                <AddCommentForm onSendComment={onSendComment} />
                 <CommentList isLoading={isLoading} comments={comment} />
             </div>
         </DynamicModuleLoader>

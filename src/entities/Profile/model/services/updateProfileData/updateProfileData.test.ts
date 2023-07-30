@@ -12,6 +12,7 @@ const data = {
     country: Country.Belarus,
     currency: Currency.RUB,
     city: 'Petrozavodsk',
+    id: '1',
 };
 
 describe('updateProfileData', () => {

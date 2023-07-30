@@ -112,6 +112,36 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "1111",
+      "id": "-iQmi-L"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "ya prosto user",
+      "id": "WUQS82G"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Привет, мир!",
+      "id": "1Qok-Nb"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "11111",
+      "id": "pg5K152"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": ")",
+      "id": "oBY6yce"
     }
   ],
   "users": [
@@ -130,14 +160,28 @@
       "avatar": "https://thedungeonindeepspace.files.wordpress.com/2020/12/img_3600.jpg?w=700"
     }
   ],
-  "profile": {
-    "first": "Даниил",
-    "lastname": "Луценко",
-    "age": 22,
-    "currency": "EUR",
-    "country": "Belarus",
-    "city": "Petrozavodsk",
-    "username": "admin",
-    "avatar": "https://thedungeonindeepspace.files.wordpress.com/2020/12/img_3600.jpg?w=700"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Даниил1",
+      "lastname": "Луценко",
+      "age": 30,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Petrozavodsk",
+      "username": "admin",
+      "avatar": "https://thedungeonindeepspace.files.wordpress.com/2020/12/img_3600.jpg?w=700"
+    },
+    {
+      "id": "2",
+      "first": "Юзер",
+      "lastname": "Юзер",
+      "age": 15,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Petrozavodsk",
+      "username": "user",
+      "avatar": "https://avatars.mds.yandex.net/i?id=07e6d2fd144c63f23e6b1b1b07f996fc5477271f-9264877-images-thumbs&n=13"
+    }
+  ]
 }
