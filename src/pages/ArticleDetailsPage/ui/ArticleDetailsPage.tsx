@@ -10,7 +10,10 @@ import { CommentList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articleDetailsCommentReducer, getArticleComments } from '../model/slice/articleDetailsCommentSlice';
 import { useSelector } from 'react-redux';
-import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors/comments';
+import {
+    // getArticleCommentsError,
+    getArticleCommentsIsLoading,
+} from '../model/selectors/comments';
 import { useAppDispacth } from 'shared/lib/hooks/useAppDispatch';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -30,7 +33,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { t } = useTranslation('article');
     const isLoading = useSelector(getArticleCommentsIsLoading);
-    const error = useSelector(getArticleCommentsError);
+    // const error = useSelector(getArticleCommentsError);
     const comment = useSelector(getArticleComments.selectAll);
     const dispatch = useAppDispacth();
 

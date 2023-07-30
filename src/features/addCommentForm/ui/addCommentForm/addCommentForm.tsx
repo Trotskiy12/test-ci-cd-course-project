@@ -4,7 +4,10 @@ import cls from './addCommentForm.module.scss';
 import { Input } from 'shared/ui/Input/Input';
 import { Button } from 'shared/ui/Button/Button';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { getAddCommentFromError, getAddCommentFromText } from '../../model/selectors/addCommentFormSelectors';
+import {
+    // getAddCommentFromError,
+    getAddCommentFromText,
+} from '../../model/selectors/addCommentFormSelectors';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { useAppDispacth } from 'shared/lib/hooks/useAppDispatch';
@@ -23,11 +26,11 @@ const reducers: ReducersList = {
 const AddCommentForm = memo((props: AddCommentFormProps) => {
     const { className, onSendComment } = props;
     const text = useSelector(getAddCommentFromText);
-    const error = useSelector(getAddCommentFromError);
+    // const error = useSelector(getAddCommentFromError);
 
     const dispatch = useAppDispacth();
     const onCommentTextChange = useCallback((value: string) => {
-        dispatch(addCommentFormSliceActions.setText(value));
+        dispatch(addCommentFormSliceActions.setText(value || ''));
     }, [dispatch]);
 
     const onSendHandler = useCallback(() => {
@@ -39,6 +42,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
         <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.addCommentForm, {}, [className])}>
                 <Input
+                    type="text"
                     className={cls.input}
                     placeholder="Введите текст комментария"
                     value={text}

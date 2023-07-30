@@ -38,6 +38,7 @@ export const CommentList = (props: CommentListProps) => {
                         isLoading={isLoading}
                         className={cls.comment}
                         comment={comment}
+                        key={Math.random()}
                     />
                 ))
                 : <Text text="Комментарии отсуствуют" />}

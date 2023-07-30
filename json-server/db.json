@@ -160,6 +160,12 @@
       "userId": "1",
       "text": "test",
       "id": "GjIAvMF"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "ghghgh",
+      "id": "knC-7qb"
     }
   ],
   "users": [
@@ -181,9 +187,9 @@
   "profile": [
     {
       "id": "1",
-      "first": "Даниил1",
+      "first": "Даниил",
       "lastname": "Луценко",
-      "age": 30,
+      "age": 22,
       "currency": "RUB",
       "country": "Belarus",
       "city": "Petrozavodsk",

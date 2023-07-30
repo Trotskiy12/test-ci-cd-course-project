@@ -27,6 +27,7 @@ Normal.args = {
             user: { id: '1', username: 'Petya' },
         },
     ],
+    isLoading: false,
 };
 
 export const Loading = Template.bind({});
