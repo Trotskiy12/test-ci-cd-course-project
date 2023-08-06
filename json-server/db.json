@@ -29,6 +29,7 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
+      "userId": "1",
       "type": [
         "IT"
       ],
@@ -166,6 +167,12 @@
       "userId": "1",
       "text": "ghghgh",
       "id": "knC-7qb"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "!!))",
+      "id": "8RTxJnU"
     }
   ],
   "users": [
@@ -190,7 +197,7 @@
       "first": "Даниил",
       "lastname": "Луценко",
       "age": 22,
-      "currency": "RUB",
+      "currency": "USD",
       "country": "Belarus",
       "city": "Petrozavodsk",
       "username": "admin",
