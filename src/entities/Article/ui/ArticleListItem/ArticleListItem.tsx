@@ -2,7 +2,6 @@
 import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
-import { useTranslation } from 'react-i18next';
 import {
     Article, ArticleBlockType, ArticleView, ArticleTextBlock,
 } from '../../model/types/article';
@@ -24,7 +23,6 @@ interface ArticleListItemProps {
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const { className, article, view } = props;
-    const { t } = useTranslation();
     const navigate = useNavigate();
 
     const onOpenArticle = useCallback(() => {
