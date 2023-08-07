@@ -1,16 +1,15 @@
-import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './ArticleViewSelector.module.scss';
-import { ArticleView } from '../../model/types/article';
+import { memo } from 'react';
 import ListIcon from 'shared/assets/icons/list.svg';
 import TiledIcon from 'shared/assets/icons/tiled.svg';
-import { Button } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ThemeButton } from '../../../../shared/ui/Button/Button';
+import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import cls from './ArticleViewSelector.module.scss';
+import { ArticleView } from '../../model/types/article';
 
 interface ArticleViewSelectorProps {
     className?: string;
-    view: ArticleView;
+    view: ArticleView,
     onViewClick?: (view: ArticleView) => void;
 }
 
