@@ -6,6 +6,7 @@ import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
 import { $api } from 'shared/api/api';
+import { scrollSaveReducer } from 'features/scrollSave';
 // import { NavigateOptions, To } from 'react-router-dom';
 
 // для переиспользования для storybook jest
@@ -19,6 +20,7 @@ export function createReduxStore(
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
+        scrollSave: scrollSaveReducer,
     };
 
     const reducerManager = createReducerManager(rootReducer);

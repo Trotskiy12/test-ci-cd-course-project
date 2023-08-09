@@ -8,12 +8,14 @@ import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { AddCommentFormSchema } from 'features/addCommentForm';
+import { ScrollSaveSchema } from 'features/scrollSave';
 import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
 import { ArticlePageSchema } from 'pages/ArticlePage';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    scrollSave: ScrollSaveSchema;
 
     // Asyncs
     loginForm?: LoginSchema;
