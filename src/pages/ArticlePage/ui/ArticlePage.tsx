@@ -9,7 +9,6 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { articlePageActions, articlePageReducer, getArticles } from '../model/slices/articlePageSlice';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispacth } from 'shared/lib/hooks/useAppDispatch';
-import { fetchArticleList } from '../model/services/fetchArticleList/fetchArticleList';
 import { useSelector } from 'react-redux';
 import {
     // getArticlesPageError,
@@ -18,6 +17,7 @@ import {
 } from '../model/selectors/articlesPageSelectors';
 import { Page } from 'shared/ui/Page/Page';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlePage } from '../model/services/initArticlePage/initArticlePage';
 
 interface ArticlePageProps {
     className?: string;
@@ -46,14 +46,13 @@ const ArticlePage = (props: ArticlePageProps) => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(articlePageActions.initState());
-        dispatch(fetchArticleList({
-            page: 1,
-        }));
+        dispatch(initArticlePage());
     });
 
+    // При установке ключа removeAfterUnmount - проблему с тем, что статьи нужно проскролить заново для подгрузки - уходит
+    // Но остается проблема, что несколько раз выполняется action на инициализацию
     return (
-        <DynamicModuleLoader reducers={reducers}>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlePage, {}, [className])}

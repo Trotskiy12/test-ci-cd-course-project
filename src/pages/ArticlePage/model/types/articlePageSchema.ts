@@ -9,4 +9,7 @@ export interface ArticlePageSchema extends EntityState<Article>{
     page: number;
     limit?: number;
     hasMore: boolean;
+
+    // Не изменяемый флаг - "_" - руками менять нельзя
+    _inited: boolean; // проверка - инициализированный state или нет
 }

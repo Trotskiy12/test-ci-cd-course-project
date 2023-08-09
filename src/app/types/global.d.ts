@@ -21,3 +21,7 @@ declare const __PROJECT__: 'storybook' | 'frontend' | 'jest';
 type DeepPartial<T> = T extends object ? {
 	[P in keyof T]?: DeepPartial<T[P]>;
 } : T;
+// Тот же Record но поля могут быть необязательными
+type OptinalRecord<K extends keyof any, T> = {
+    [P in K]?: T;
+};

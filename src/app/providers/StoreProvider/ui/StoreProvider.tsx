@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { createReduxStore } from '../config/store';
 import { StateSchema } from '../config/StateSchema';
 import { ReducersMapObject } from '@reduxjs/toolkit';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 interface StoreProviderProps {
     children?: ReactNode;
@@ -14,12 +14,14 @@ interface StoreProviderProps {
 export const StoreProvider = (props: StoreProviderProps) => {
     const { children, initialState, asyncReducers } = props;
 
-    const navigate = useNavigate();
-
+    // const navigate = useNavigate();
+    // Проблема в том, что navigate из-за происходит ререндер компонента - при изменении маршрута
+    // Поэтому store пересоздается каждый раз на ререндер компонента
+    // Новый store каждый раз, когда ререндериться компонент
     const store = createReduxStore(
         initialState as StateSchema,
         asyncReducers as ReducersMapObject<StateSchema>,
-        navigate,
+        // navigate,
     );
 
     return (

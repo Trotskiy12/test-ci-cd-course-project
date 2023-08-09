@@ -1,19 +1,23 @@
 import {
     AnyAction, Reducer, ReducersMapObject, combineReducers,
 } from '@reduxjs/toolkit';
-import { StateSchema, StateSchemaKey } from './StateSchema';
+import {
+    MountedReducers, ReducerManager, StateSchema, StateSchemaKey,
+} from './StateSchema';
 
 // Функция принимает дефолтные редуюсеры
-export function createReducerManager(initialReducers: ReducersMapObject<StateSchema>) {
+export function createReducerManager(initialReducers: ReducersMapObject<StateSchema>): ReducerManager {
     const reducers = { ...initialReducers };
     // создаем корневой редьюсер
     let combinedReducer = combineReducers(reducers);
     // названия редусеров, которые мы хотим удалить
     let keysToRemove: Array<StateSchemaKey> = [];
+    const mountedReducers: MountedReducers = {};
 
     return {
         // просто вернёт редьюсеры
         getReducerMap: () => reducers,
+        getMountedReducers: () => mountedReducers,
         // функция reducer
         reduce: (state: StateSchema, action: AnyAction) => {
             // если в массиве есть ключи для удаления
@@ -35,6 +39,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
             }
 
             reducers[key] = reducer;
+            mountedReducers[key] = true;
 
             combinedReducer = combineReducers(reducers);
         },
@@ -47,6 +52,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
             delete reducers[key];
 
             keysToRemove.push(key);
+            mountedReducers[key] = false;
             combinedReducer = combineReducers(reducers);
         },
     };

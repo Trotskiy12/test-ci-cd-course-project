@@ -21,11 +21,18 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        // получение вмонтированных редьюсеров
+        const mountedReducers = store.reducerManager.getMountedReducers();
         // При использовании ReducersList внутри forEach мы будем терять StateSchemaKey
         // Object.entries, когда достаёт ключи их объекта, воспринимает их как string
         Object.entries(reducers).forEach(([name, reducer]) => {
-            store.reducerManager.add(name as StateSchemaKey, reducer);
-            dispatch({ type: `@@INIT ${name} REDUCER` });
+            // достаем редьюсер по name
+            const mounted = mountedReducers[name as StateSchemaKey];
+            // если редьюсер ещё не вмонтирован, то мы его добавляем
+            if (!mounted) {
+                store.reducerManager.add(name as StateSchemaKey, reducer);
+                dispatch({ type: `@@INIT ${name} REDUCER` });
+            }
         });
         // в момент монтирования компонента, с помощью reducerManager'a будем добавлять в корневой reducer loginReducer
         return () => {
