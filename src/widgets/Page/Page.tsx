@@ -50,7 +50,11 @@ export const Page = memo((props: PageProps) => {
             onScroll={onScroll}
         >
             {children}
-            <div ref={triggerRef} />
+            {/*
+                Так как блок div не всегда отрабатывает - напишем класс, в котором укажем размеры для блока.
+                Отображаем только в том случае, если у нас есть callback fn
+            */}
+            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
         </section>
     );
 });

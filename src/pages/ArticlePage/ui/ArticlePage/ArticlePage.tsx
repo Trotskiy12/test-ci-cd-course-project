@@ -4,9 +4,9 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticlePage.module.scss';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/Article';
+import { ArticleList } from 'entities/Article';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articlePageActions, articlePageReducer, getArticles } from '../model/slices/articlePageSlice';
+import { articlePageReducer, getArticles } from '../../model/slices/articlePageSlice';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispacth } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
@@ -14,10 +14,12 @@ import {
     // getArticlesPageError,
     getArticlesPageIsLoading,
     getArticlesPageView,
-} from '../model/selectors/articlesPageSelectors';
+} from '../../model/selectors/articlesPageSelectors';
 import { Page } from 'widgets/Page/Page';
-import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { initArticlePage } from '../model/services/initArticlePage/initArticlePage';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
+import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
+import { useSearchParams } from 'react-router-dom';
 
 interface ArticlePageProps {
     className?: string;
@@ -37,16 +39,14 @@ const ArticlePage = (props: ArticlePageProps) => {
     // const error = useSelector(getArticlesPageError);
     const view = useSelector(getArticlesPageView);
 
-    const onChangeView = useCallback((view: ArticleView) => {
-        dispatch(articlePageActions.setView(view));
-    }, [dispatch]);
+    const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(initArticlePage());
+        dispatch(initArticlePage(searchParams));
     });
 
     // При установке ключа removeAfterUnmount - проблему с тем, что статьи нужно проскролить заново для подгрузки - уходит
@@ -57,11 +57,12 @@ const ArticlePage = (props: ArticlePageProps) => {
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlePage, {}, [className])}
             >
-                <ArticleViewSelector view={view} onViewClick={onChangeView} />
+                <ArticlePageFilters />
                 <ArticleList
                     isLoading={isLoading}
                     view={view}
                     articles={articles}
+                    className={cls.list}
                 />
             </Page>
         </DynamicModuleLoader>
