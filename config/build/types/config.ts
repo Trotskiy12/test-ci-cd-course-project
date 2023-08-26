@@ -6,7 +6,9 @@ export type BuildPaths = {
 	entry: string; // Путь для точки входа
 	output: string; // Путь для результата сборки
 	html: string; // Путь для html файла
-	src: string; // Пусть до src
+	src: string; // Путь до src
+	locales: string; // Путь до файлов с переводами
+	buildLocales: string;// Путь куда уберем переводы
 };
 
 // Тип для переменных окружения
