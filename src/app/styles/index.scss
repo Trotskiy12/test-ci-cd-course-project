@@ -19,12 +19,17 @@
     display: flex;
 }
 
-// .page-wrapper {
-//     flex-grow: 1;
-//     padding: 20px 20px 20px 45px;
-//     height: calc(100vh - var(--navbar-height));
-//     overflow-y: auto;
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 8px;
+}
 
-//     // width: 100%;
-//     flex-shrink: 100;
-// }
+*::-webkit-scrollbar-track {
+    background: var(--card-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--inverted-primary-color);
+    border-radius: 20px;
+    border: 2px solid var(--primary-color);
+}
