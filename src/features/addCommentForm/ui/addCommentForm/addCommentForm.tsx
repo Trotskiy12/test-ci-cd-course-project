@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { useAppDispacth } from 'shared/lib/hooks/useAppDispatch';
 import { addCommentFormSliceActions, addCommentFormSliceReducer } from '../../model/slices/addCommentFromSlice';
+import { HStack } from 'shared/ui/Stack';
 
 export interface AddCommentFormProps {
     className?: string;
@@ -40,7 +41,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.addCommentForm, {}, [className])}>
+            <HStack justify="between" max className={classNames(cls.addCommentForm, {}, [className])}>
                 <Input
                     type="text"
                     className={cls.input}
@@ -54,7 +55,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                     Отправить
 
                 </Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     );
 });

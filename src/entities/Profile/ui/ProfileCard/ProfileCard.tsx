@@ -10,6 +10,7 @@ import { TextAlign } from '../../../../shared/ui/Text/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
+import { HStack, VStack } from 'shared/ui/Stack';
 
 interface ProfileCardProps {
     className?: string;
@@ -55,14 +56,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (error) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack  justify={'center'} className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
                 <Text
                     theme={TextTheme.ERROR}
                     title="Произошла ошибка при загрузке страницы профиля"
                     text="Попробуйте обновить страницу"
                     align={TextAlign.CENTER}
                 />
-            </div>
+            </HStack>
         );
     }
 
@@ -71,12 +72,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
     };
 
     return (
-        <div className={classNames(cls.ProfileCard, mods, [className])}>
-            <div className={cls.data}>
+        <VStack gap='16' max className={classNames(cls.ProfileCard, mods, [className])}>
                 {data?.avatar && (
-                    <div className={cls.avatarWrapper}>
+                    <HStack justify={'center'} max className={cls.avatarWrapper}>
                         <Avatar src={data?.avatar} />
-                    </div>
+                    </HStack>
                 )}
                 <Input
                     type="text"
@@ -138,7 +138,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     onChange={onChangeCountry}
                     readonly={readonly}
                 />
-            </div>
-        </div>
+        </VStack>
     );
 };

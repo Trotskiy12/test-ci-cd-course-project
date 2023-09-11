@@ -27,8 +27,6 @@
 .items {
     margin-top: 20px;
     margin-left: 30px;
-    display: flex;
-    flex-direction: column;
 }
 
 .item {
@@ -48,16 +46,13 @@
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
-
     .switchers {
         flex-direction: column;
         align-items: center;
     }
-
     .lang {
         margin-left: 0;
     }
-
     .link {
         opacity: 0;
         transition: 0.2s opacity;
