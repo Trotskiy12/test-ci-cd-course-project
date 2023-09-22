@@ -3,6 +3,11 @@
     // шрифт
     --font-family-main: consolas, "Times New Roman", serif;
 
+    // small
+    --font-size-s: 12px;
+    --font-line-s: 20px;
+    --font-m: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
+
     // средний размер шрифта - по умолчанию
     --font-size-m: 16px;
 
