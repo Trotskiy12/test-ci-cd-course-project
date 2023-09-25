@@ -48,15 +48,23 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <HStack 
+                className={classNames(cls.ProfileCard, {}, [className, cls.loading])}
+                justify='center'
+                max
+            >
                 <Loader />
-            </div>
+            </HStack>
         );
     }
 
     if (error) {
         return (
-            <HStack  justify={'center'} className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack  
+                className={classNames(cls.ProfileCard, {}, [className, cls.error])}
+                justify='center'
+                max
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     title="Произошла ошибка при загрузке страницы профиля"
