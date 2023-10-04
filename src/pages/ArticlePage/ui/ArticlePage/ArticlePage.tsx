@@ -4,22 +4,16 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticlePage.module.scss';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArticleList } from 'entities/Article';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articlePageReducer, getArticles } from '../../model/slices/articlePageSlice';
+import { articlePageReducer } from '../../model/slices/articlePageSlice';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispacth } from 'shared/lib/hooks/useAppDispatch';
-import { useSelector } from 'react-redux';
-import {
-    // getArticlesPageError,
-    getArticlesPageIsLoading,
-    getArticlesPageView,
-} from '../../model/selectors/articlesPageSelectors';
 import { Page } from 'widgets/Page/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
 import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 import { useSearchParams } from 'react-router-dom';
+import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 
 interface ArticlePageProps {
     className?: string;
@@ -34,11 +28,6 @@ const ArticlePage = (props: ArticlePageProps) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { t } = useTranslation('article');
     const dispatch = useAppDispacth();
-    const articles = useSelector(getArticles.selectAll);
-    const isLoading = useSelector(getArticlesPageIsLoading);
-    // const error = useSelector(getArticlesPageError);
-    const view = useSelector(getArticlesPageView);
-
     const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
@@ -58,12 +47,7 @@ const ArticlePage = (props: ArticlePageProps) => {
                 className={classNames(cls.ArticlePage, {}, [className])}
             >
                 <ArticlePageFilters />
-                <ArticleList
-                    isLoading={isLoading}
-                    view={view}
-                    articles={articles}
-                    className={cls.list}
-                />
+                <ArticleInfiniteList className={cls.list} />
             </Page>
         </DynamicModuleLoader>
     );
