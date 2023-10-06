@@ -1,7 +1,10 @@
+import { UserRole } from 'entities/User';
 import { AboutPage } from 'pages/AboutPage';
+import { AdminPanelPage } from 'pages/AdminPanelPage';
 import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
 import { ArticleEditPage } from 'pages/ArticleEditPage';
 import { ArticlePage } from 'pages/ArticlePage';
+import { ForbiddenPage } from 'pages/ForbiddenPage';
 import { MainPage } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { ProfilePage } from 'pages/ProfilePage';
@@ -9,6 +12,7 @@ import { type RouteProps } from 'react-router-dom';
 
 export type AppRouteProps = RouteProps & {
     authOnly?: boolean;
+    roles?: UserRole[];
 }
 
 // Список роутов, который находится в приложении
@@ -20,6 +24,8 @@ export enum AppRoutes {
     ARTICLES_DETAILS = 'articles_details',
     ARTICLES_CREATE = 'articles_create',
     ARTICLES_EDIT = 'articles_edit',
+    ADMIN_PANEL = 'admin_panel',
+    FORBIDDEN = 'forbidden',
     // last
     NOT_FOUND = 'not_found'
 }
@@ -33,6 +39,8 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.ARTICLES_DETAILS]: '/articles/', // + :id
     [AppRoutes.ARTICLES_CREATE]: '/articles/new',
     [AppRoutes.ARTICLES_EDIT]: '/articles/:id/edit',
+    [AppRoutes.ADMIN_PANEL]: '/admin',
+    [AppRoutes.FORBIDDEN]: '/forbidden',
     // располагаем в конце списка, так как звездочка будет обработывать все пути
     // которые не отработали выше
     [AppRoutes.NOT_FOUND]: '*',
@@ -71,6 +79,17 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.ARTICLES_EDIT]: {
         path: `${RoutePath.articles_edit}`,
         element: <ArticleEditPage />,
+        authOnly: true,
+    },
+    [AppRoutes.ADMIN_PANEL]: {
+        path: `${RoutePath.admin_panel}`,
+        element: <AdminPanelPage />,
+        authOnly: true,
+        roles: [UserRole.ADMIN, UserRole.MANAGER],
+    },
+    [AppRoutes.FORBIDDEN]: {
+        path: `${RoutePath.forbidden}`,
+        element: <ForbiddenPage />,
         authOnly: true,
     },
     // last

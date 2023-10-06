@@ -9,17 +9,14 @@ const AppRouter = () => {
     const renderWithWrapper = useCallback((route: AppRouteProps) => {
         const element = (
             <Suspense fallback={<PageLoader />}>
-                {/* page-wrapper - глобальная обертка */}
-                {/* <div className="page-wrapper"> */}
                 {route.element}
-                {/* </div> */}
             </Suspense>
         );
         return (
             <Route
                 key={route.path}
                 path={route.path}
-                element={route.authOnly ? <RequireAuth>{element}</RequireAuth> : element}
+                element={route.authOnly ? <RequireAuth roles={route.roles}>{element}</RequireAuth> : element}
             />
         );
     }, []);

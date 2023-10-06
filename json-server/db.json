@@ -636,14 +636,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://thedungeonindeepspace.files.wordpress.com/2020/12/img_3600.jpg?w=700"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://thedungeonindeepspace.files.wordpress.com/2020/12/img_3600.jpg?w=700"
+    },
+    {
+      "id": "3",
+      "username": "test user",
+      "password": "test",
+      "roles": ["MANAGER"],
       "avatar": "https://thedungeonindeepspace.files.wordpress.com/2020/12/img_3600.jpg?w=700"
     }
   ],
