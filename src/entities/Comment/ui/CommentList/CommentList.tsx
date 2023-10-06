@@ -22,7 +22,7 @@ export const CommentList = (props: CommentListProps) => {
 
     if (isLoading) {
         return (
-            <VStack gap="16" className={classNames('', {}, [className])}>
+            <VStack gap="16" max className={classNames('', {}, [className])}>
                 <CommentCard isLoading={isLoading} />
                 <CommentCard isLoading={isLoading} />
                 <CommentCard isLoading={isLoading} />

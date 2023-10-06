@@ -79,7 +79,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     return (
         <WindowScroller
-            onScroll={() => console.log('scroll')}
             scrollElement={document.getElementById(PAGE_ID) as Element}
         >
             {({
@@ -97,7 +96,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                             onScroll={onChildScroll}
                             scrollTop={scrollTop}
                         />) : (
-                        articles.map(item => {
+                        articles.map(item => (
                             <ArticleListItem
                                 article={item}
                                 view={view}
@@ -105,7 +104,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                                 target={target}
                                 key={item.id}
                             />
-                        })
+                        ))
                     )
                     }
                     {isLoading && getSkeletons(view)}
