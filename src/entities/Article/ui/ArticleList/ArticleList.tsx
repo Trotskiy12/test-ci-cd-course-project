@@ -76,7 +76,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             </div>
         );
     }
-
+    // TODO: Мигрировать с react-virtualized на более актуальную библиотеку (react-window | react-virtuoso)
     return (
         <WindowScroller
             scrollElement={document.getElementById(PAGE_ID) as Element}
@@ -84,6 +84,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             {({
                 height, width, registerChild, scrollTop, onChildScroll,
             }) => (
+                // @ts-ignore
                 <div ref={registerChild} className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
                     {virtualized ? (
                         <List

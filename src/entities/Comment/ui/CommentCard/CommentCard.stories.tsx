@@ -20,6 +20,7 @@ Normal.args = {
         text: 'hello world',
         user: { id: '1', username: 'Vasya' },
     },
+    isLoading: false
 };
 
 export const Loading = Template.bind({});

@@ -26,14 +26,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { t } = useTranslation('article');
 
-    if (!id) {
-        return (
-            <Page className={classNames(cls.ArticlePage, {}, [className])}>
-                Статья не найдена
-            </Page>
-        );
-    }
-
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticlePage, {}, [className])}>

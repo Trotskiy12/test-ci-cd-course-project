@@ -112,7 +112,7 @@ export const ListSmall = Template.bind({});
 ListSmall.args = {
     articles: new Array(9)
         .fill(0)
-        .map((item, index) => ({
+        .map((_, index) => ({
             ...article,
             id: String(index),
         })),
@@ -124,7 +124,7 @@ export const ListBig = Template.bind({});
 ListBig.args = {
     articles: new Array(9)
         .fill(0)
-        .map((item, index) => ({
+        .map((_, index) => ({
             ...article,
             id: String(index),
         })),
