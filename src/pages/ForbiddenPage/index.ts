@@ -1,5 +1,5 @@
-import { ForbiddenAsyncPage } from "./ui/ForbiddenPage.async";
+import { ForbiddenAsyncPage } from './ui/ForbiddenPage.async';
 
-export { 
+export {
     ForbiddenAsyncPage as ForbiddenPage,
-}
+};

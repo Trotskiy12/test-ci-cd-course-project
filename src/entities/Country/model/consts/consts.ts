@@ -5,3 +5,4 @@ export enum Country {
     Kazakhstan = 'Kazahstan',
     Armenia = 'Armenia'
 }
+

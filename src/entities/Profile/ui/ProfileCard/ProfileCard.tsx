@@ -2,11 +2,12 @@
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './ProfileCard.module.scss';
 import { useTranslation } from 'react-i18next';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text/Text';
+import { TextTheme } from 'shared/const/textConsts';
 import { Input } from 'shared/ui/Input/Input';
 import { Profile } from '../../model/types/profile';
 import { Loader } from 'shared/ui/Loader/Loader';
-import { TextAlign } from '../../../../shared/ui/Text/Text';
+import { TextAlign } from 'shared/const/textConsts';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
@@ -93,7 +94,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={cls.input}
                 onChange={onChangeFirstName}
                 readonly={readonly}
-                data-testid={'ProfileCard.firstname'}
+                data-testid="ProfileCard.firstname"
             />
             <Input
                 type="text"
@@ -102,7 +103,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                 className={cls.input}
                 onChange={onChangeLastName}
                 readonly={readonly}
-                data-testid={'ProfileCard.lastname'}
+                data-testid="ProfileCard.lastname"
             />
             <Input
                 type="text"

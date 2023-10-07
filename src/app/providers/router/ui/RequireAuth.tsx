@@ -12,7 +12,7 @@ interface RequireAuthProps {
 export function RequireAuth(props: RequireAuthProps) {
     const {
         children,
-        roles
+        roles,
     } = props;
     const auth = useSelector(getUserAuthData);
     const location = useLocation();
@@ -22,23 +22,22 @@ export function RequireAuth(props: RequireAuthProps) {
     const hasRequiredRoles = useMemo(() => {
         // если по маршруту не передан массив необходимых прав на доступ
         // то вернём true - на страницу можно войти
-        if(!roles) return true;
-        // иначе делаем проверку на права, которые есть у пользователя 
+        if (!roles) return true;
+        // иначе делаем проверку на права, которые есть у пользователя
         // с теми правами, которые необходимы для досутпа к странице
-        return roles.some(requiredRole => {
-            const hasRole = userRoles?.includes(requiredRole)
+        return roles.some((requiredRole) => {
+            const hasRole = userRoles?.includes(requiredRole);
             return hasRole;
-        })
+        });
     }, [roles, userRoles]);
 
-    
     if (!auth) {
         return <Navigate to={RoutePath.main} state={{ from: location }} replace />;
     }
-    
-    if(!hasRequiredRoles) {
+
+    if (!hasRequiredRoles) {
         return <Navigate to={RoutePath.forbidden} state={{ from: location }} replace />;
     }
-    
+
     return children;
 }

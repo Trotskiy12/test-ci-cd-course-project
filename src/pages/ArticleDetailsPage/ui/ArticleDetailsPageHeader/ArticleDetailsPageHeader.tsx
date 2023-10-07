@@ -3,7 +3,8 @@ import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
+import { ThemeButton } from 'shared/const/buttonConsts';
 import { useSelector } from 'react-redux';
 import { getCanEditArticle } from '../../model/selectors/article';
 import { getArticleDetailsData } from 'entities/Article';
@@ -28,7 +29,7 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
     }, [article?.id, navigate]);
 
     return (
-        <HStack max justify='between' className={classNames('', {}, [className])}>
+        <HStack max justify="between" className={classNames('', {}, [className])}>
             <Button
                 theme={ThemeButton.OUTLINE}
                 onClick={onBackToList}

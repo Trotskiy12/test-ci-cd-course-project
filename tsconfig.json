@@ -22,7 +22,8 @@
         // позволяет работать с пакетами, которые используют common js как с обычными пакетами с помоью import
         "esModuleInterop": true,
         // если библиотека не имеет default export, то при true -> import React from 'react';
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "isolatedModules": true
     },
     "ts-node": {
         "compilerOptions": {

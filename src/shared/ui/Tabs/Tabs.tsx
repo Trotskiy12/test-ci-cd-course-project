@@ -1,7 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Tabs.module.scss';
 import { ReactNode, memo, useCallback } from 'react';
-import { Card, CardTheme } from '../Card/Card';
+import { Card } from '../Card/Card';
+import { CardTheme } from 'shared/const/cardConsts';
 
 export interface TabItem {
     value: string;

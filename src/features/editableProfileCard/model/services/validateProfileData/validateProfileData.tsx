@@ -1,5 +1,6 @@
 import { Profile } from 'entities/Profile';
-import { ValidateProfileError } from '../../types/editableProfileCardSchema';
+import { ValidateProfileError } from '../../consts/consts';
+
 // TODO: Доделать валидацию по всем полям
 // TODO: После завершения курса переписать с помощью react-hook-form и yup validate-schema
 export const validateProfileData = (profile?: Profile): ValidateProfileError[] => {

@@ -1,16 +1,12 @@
 import { memo } from 'react';
 import { Page } from 'widgets/Page/Page';
 
-interface AdminPanelPageProps {
-    className?: string;
-}
-
-const AdminPanelPage = memo((props: AdminPanelPageProps) => {
+const AdminPanelPage = memo(() => {
     return (
         <Page>
-            {'Панель администратора'}
+            Панель администратора
         </Page>
     );
-})
+});
 
 export default AdminPanelPage;

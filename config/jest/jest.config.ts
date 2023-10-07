@@ -1,4 +1,4 @@
-import "whatwg-fetch";
+import 'whatwg-fetch';
 import path from 'path';
 
 export default {

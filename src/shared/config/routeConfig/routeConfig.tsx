@@ -9,25 +9,12 @@ import { MainPage } from 'pages/MainPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { ProfilePage } from 'pages/ProfilePage';
 import { type RouteProps } from 'react-router-dom';
+import { AppRoutes } from '../../const/appRoutesConsts';
+
 
 export type AppRouteProps = RouteProps & {
     authOnly?: boolean;
     roles?: UserRole[];
-}
-
-// Список роутов, который находится в приложении
-export enum AppRoutes {
-	MAIN = 'main',
-	ABOUT = 'about',
-    PROFILE = 'profile',
-    ARTICLES = 'articles',
-    ARTICLES_DETAILS = 'articles_details',
-    ARTICLES_CREATE = 'articles_create',
-    ARTICLES_EDIT = 'articles_edit',
-    ADMIN_PANEL = 'admin_panel',
-    FORBIDDEN = 'forbidden',
-    // last
-    NOT_FOUND = 'not_found'
 }
 
 // Для каждого маршрута из AppRoutes укажем путь до компонентов

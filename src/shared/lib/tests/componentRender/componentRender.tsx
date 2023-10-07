@@ -19,7 +19,7 @@ export function componentRender(component: ReactNode, options: ComponentRenderOp
     const {
         route = '/',
         initialState,
-        asyncReducers
+        asyncReducers,
     } = options;
     // Добавляем MemoryRouter, чтобы тестировать компоненты, которые используют routing
     // Добавляем StoreProvider, чтобы тестировать компоненты, которые используют Redux state

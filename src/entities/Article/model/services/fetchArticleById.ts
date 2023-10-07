@@ -8,8 +8,7 @@ export const fetchArticleById = createAsyncThunk<Article, string | undefined, Th
     async (articleId, thunkApi) => {
         const { extra, rejectWithValue } = thunkApi;
         try {
-
-            if(!articleId) {
+            if (!articleId) {
                 throw new Error('Не удалось найти статью с данным id');
             }
 

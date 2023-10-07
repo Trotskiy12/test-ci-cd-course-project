@@ -6,11 +6,12 @@ import {
 import { StateSchema } from 'app/providers/StoreProvider';
 import { ArticlePageSchema } from '../types/articlePageSchema';
 import {
-    Article, ArticleSortField, ArticleType, ArticleView,
+    Article
 } from 'entities/Article/model/types/article';
 import { fetchArticleList } from '../services/fetchArticleList/fetchArticleList';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { SortOrder } from 'shared/types';
+import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article';
 
 const articlesAdapter = createEntityAdapter<Article>({
     // функция получения id, по которому будет нормализация данных

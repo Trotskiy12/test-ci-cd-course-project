@@ -1,13 +1,18 @@
 /* eslint-disable i18next/no-literal-string */
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
+import { ThemeButton } from 'shared/const/buttonConsts';
 import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
+import { Text } from 'shared/ui/Text/Text';
+import { TextTheme } from 'shared/const/textConsts';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { AppLinkTheme } from 'shared/const/appLinkConsts';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
@@ -22,7 +27,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const dispacth = useDispatch();
     const isAdmin = useSelector(isUserAdmin);
     const isManager = useSelector(isUserManager);
-
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);

@@ -1,10 +1,10 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { EditableProfileCard } from './EditableProfileCard';
 import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
 import { Profile } from 'entities/Profile';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { profileReducer } from 'features/editableProfileCard/model/slice/profileSlice';
+import { profileReducer } from '../../model/slice/profileSlice';
 import userEvent from '@testing-library/user-event';
 import { $api } from 'shared/api/api';
 
@@ -16,8 +16,8 @@ const profile: Profile = {
     currency: Currency.USD,
     country: Country.Kazakhstan,
     city: 'Ekb',
-    username: 'admin123'
-}
+    username: 'admin123',
+};
 
 const options = {
     initialState: {
@@ -27,26 +27,26 @@ const options = {
             form: profile,
         },
         user: {
-            authData: { id: '1', username: 'admin' }
-        }
+            authData: { id: '1', username: 'admin' },
+        },
     },
     asyncReducers: {
-        profile: profileReducer
+        profile: profileReducer,
     },
-}
+};
 
 describe('features/EditableProfileCard', () => {
     test('Readonly mode should toggled', async () => {
-        componentRender(<EditableProfileCard id={'1'} />, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
         expect(screen.getByTestId('EditableProfileCardHeader.CancelButton')).toBeInTheDocument();
     });
 
     test('Cancel triggered initial state form', async () => {
-        componentRender(<EditableProfileCard id={'1'} />, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
 
-        // очищаем значение по id 
+        // очищаем значение по id
         await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));
         await userEvent.clear(screen.getByTestId('ProfileCard.lastname'));
 
@@ -63,7 +63,7 @@ describe('features/EditableProfileCard', () => {
     });
 
     test('Should shown error', async () => {
-        componentRender(<EditableProfileCard id={'1'} />, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
 
         await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));
@@ -71,12 +71,11 @@ describe('features/EditableProfileCard', () => {
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.SaveButton'));
 
         expect(screen.getByTestId('EditableProfileCard.Error.Paragraph')).toBeInTheDocument();
-
     });
 
     test('Send request to server, if form without errors', async () => {
         const mockPutReq = jest.spyOn($api, 'put');
-        componentRender(<EditableProfileCard id={'1'} />, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
 
         await userEvent.type(screen.getByTestId('ProfileCard.firstname'), 'user');

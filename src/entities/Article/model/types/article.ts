@@ -1,17 +1,5 @@
 import { User } from 'entities/User';
-
-export enum ArticleSortField {
-    VIEWS = 'views',
-    TITLE = 'title',
-    CREATED = 'createdAt'
-}
-
-// Перечисление для блоков статьи
-export enum ArticleBlockType {
-    CODE = 'CODE',
-    TEXT = 'TEXT',
-    IMAGE = 'IMAGE'
-}
+import { ArticleBlockType, ArticleType } from '../consts/articleConsts';
 
 // Родительский блок, так как статьи имеют одинаковые поля указанные ниже
 export interface ArticleBlockBase {
@@ -39,19 +27,6 @@ export interface ArticleTextBlock extends ArticleBlockBase {
 
 // UNION TYPE где указываем, что блок может быть один из трех перечисленных
 export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
-
-// Тип статьи
-export enum ArticleType {
-    ALL = 'ALL',
-    IT = 'IT',
-    SCIENCE = 'SCIENCE',
-    ECONOMICS = 'ECONOMICS'
-}
-
-export enum ArticleView {
-    BIG = 'BIG',
-    SMALL = 'SMALL'
-}
 
 export interface Article {
     id: string;

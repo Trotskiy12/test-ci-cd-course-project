@@ -9,7 +9,7 @@ import 'app/styles/index.scss';
 
 const container = document.getElementById('root');
 
-if(!container) {
+if (!container) {
     throw new Error('Контейнер root не найден. Не удалось вмонтировать React app');
 }
 const root = createRoot(container);
@@ -24,4 +24,4 @@ root.render(
             </ErrorBoundary>
         </StoreProvider>
     </BrowserRouter>,
-)
+);

@@ -1,9 +1,9 @@
 import { useMemo, useState, ReactNode } from 'react';
 import {
     LOCAL_STORAGE_THEME_KEY,
-    Theme,
     ThemeContext,
 } from '../lib/ThemeContext';
+import { Theme } from '../consts/consts';
 
 /*
     LocalStorage всегда вернёт сроку, а useState ждет Theme необходимо воспользоваться кастом к типу
@@ -19,7 +19,7 @@ interface ThemeProviderProps {
 /*
     Добавим FC - скажем, что ThemeProvider Functional Component
     Сразу станет доступен props children
-    С 18 реакта из FC убрали пропс children - использование FC ради этого пропса - больше неактуально 
+    С 18 реакта из FC убрали пропс children - использование FC ради этого пропса - больше неактуально
 */
 const ThemeProvider = (props: ThemeProviderProps) => {
     const {

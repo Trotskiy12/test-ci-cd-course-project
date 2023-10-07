@@ -1,16 +1,12 @@
 import { memo } from 'react';
 import { Page } from 'widgets/Page/Page';
 
-interface ForbiddenPageProps {
-    className?: string;
-}
-
-const ForbiddenPage = memo((props: ForbiddenPageProps) => {
+const ForbiddenPage = memo(() => {
     return (
         <Page>
-            {'У вас недостаточно прав на просмотр данной страницы'}
+            У вас недостаточно прав на просмотр данной страницы
         </Page>
     );
-})
+});
 
 export default ForbiddenPage;

@@ -8,7 +8,8 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispacth } from 'shared/lib/hooks/useAppDispatch';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
+import { ThemeButton } from 'shared/const/buttonConsts';
 import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
 
@@ -46,7 +47,7 @@ export const EditableProfileCardHeader = (props: EditableProfileCardHeaderProps)
                         <Button
                             theme={ThemeButton.OUTLINE}
                             onClick={onEdit}
-                            data-testid={'EditableProfileCardHeader.EditButton'}
+                            data-testid="EditableProfileCardHeader.EditButton"
                         >
                             {t('edit')}
                         </Button>
@@ -55,14 +56,14 @@ export const EditableProfileCardHeader = (props: EditableProfileCardHeaderProps)
                             <Button
                                 theme={ThemeButton.OUTLINE_RED}
                                 onClick={onCancelEdit}
-                                data-testid={'EditableProfileCardHeader.CancelButton'}
+                                data-testid="EditableProfileCardHeader.CancelButton"
                             >
                                 {t('cancel')}
                             </Button>
                             <Button
                                 theme={ThemeButton.OUTLINE}
                                 onClick={onSave}
-                                data-testid={'EditableProfileCardHeader.SaveButton'}
+                                data-testid="EditableProfileCardHeader.SaveButton"
                             >
                                 {t('save')}
                             </Button>

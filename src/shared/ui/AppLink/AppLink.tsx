@@ -2,12 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Link, type LinkProps } from 'react-router-dom';
 import { memo, ReactNode } from 'react';
 import cls from './AppLink.module.scss';
-
-export enum AppLinkTheme {
-	PRIMARY = 'primary',
-	SECONDARY = 'secondary',
-    RED = 'red'
-}
+import { AppLinkTheme } from '../../const/appLinkConsts';
 
 //  Расширяем интерфейс, чтобы можно было использовать пропсы для Link
 type AppLinkProps = {

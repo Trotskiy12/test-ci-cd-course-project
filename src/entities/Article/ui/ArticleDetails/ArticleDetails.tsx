@@ -12,18 +12,20 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails';
-import { Text, TextAlign, TextSize } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text/Text';
+import { TextAlign, TextSize } from 'shared/const/textConsts';
 import { useTranslation } from 'react-i18next';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { HStack, VStack } from 'shared/ui/Stack';
+import { ArticleBlockType } from '../../model/consts/articleConsts';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -100,25 +102,25 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     } else {
         content = (
             <>
-                <HStack justify='center' max className={cls.avatarWrapper}>
+                <HStack justify="center" max className={cls.avatarWrapper}>
                     <Avatar
                         size={200}
                         src={article?.img}
                         className={cls.avatar}
                     />
                 </HStack>
-                <VStack gap='4' max>
+                <VStack gap="4" max>
                     <Text
                         size={TextSize.L}
                         className={cls.title}
                         title={article?.title}
                         text={article?.subtitle}
                     />
-                    <HStack gap='8' className={cls.articleInfo}>
+                    <HStack gap="8" className={cls.articleInfo}>
                         <Icon Svg={EyeIcon} className={cls.icon} />
                         <Text text={String(article?.views)} />
                     </HStack>
-                    <HStack gap='8' className={cls.articleInfo}>
+                    <HStack gap="8" className={cls.articleInfo}>
                         <Icon Svg={CalendarIcon} className={cls.icon} />
                         <Text text={article?.createdAt} />
                     </HStack>
@@ -130,7 +132,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <VStack gap={'16'} max className={classNames(cls.ArticleDetails, {}, [className])}>
+            <VStack gap="16" max className={classNames(cls.ArticleDetails, {}, [className])}>
                 {content}
             </VStack>
         </DynamicModuleLoader>

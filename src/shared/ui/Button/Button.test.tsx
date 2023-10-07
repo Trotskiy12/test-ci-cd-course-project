@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { Button, ThemeButton } from './Button';
+import { Button } from './Button';
+import { ThemeButton } from 'shared/const/buttonConsts';
 
 describe('Button', () => {
     test('Test random text', () => {
