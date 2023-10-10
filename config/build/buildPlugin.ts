@@ -5,6 +5,7 @@ import { BuildOptions } from './types/config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 // Функция для плагинов
 export function buildPlugin({
     paths, isDev, apiUrl, project,
@@ -37,6 +38,10 @@ export function buildPlugin({
     ];
 
     if (isDev) {
+        plugins.push(new CircularDependencyPlugin({
+            exclude: /node_modules/,
+            failOnError: true,
+        }));
         plugins.push(new ReactRefreshWebpackPlugin());
         // Обновить приложение без обновления страницы
         plugins.push(new webpack.HotModuleReplacementPlugin());

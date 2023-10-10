@@ -6,7 +6,7 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
     return {
         port: options.port,
         // Автоматически открывает приложение в браузере
-        open: true,
+        open: false,
         // Позволяет проксировать запросы через index.html
         historyApiFallback: true,
         hot: true,

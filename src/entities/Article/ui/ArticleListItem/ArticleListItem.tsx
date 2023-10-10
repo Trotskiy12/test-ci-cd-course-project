@@ -15,7 +15,7 @@ import { ThemeButton } from 'shared/const/buttonConsts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { ArticleBlockType, ArticleView } from 'entities/Article';
+import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 
 interface ArticleListItemProps {
     className?: string;
