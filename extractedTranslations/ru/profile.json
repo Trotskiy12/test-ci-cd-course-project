@@ -1,0 +1,19 @@
+{
+  "age": "age",
+  "cancel": "cancel",
+  "city": "city",
+  "edit": "edit",
+  "incorrect-age": "incorrect-age",
+  "incorrect-country": "incorrect-country",
+  "incorrect-userdata": "incorrect-userdata",
+  "link-avatar": "link-avatar",
+  "name": "name",
+  "no-data": "no-data",
+  "save": "save",
+  "select-country": "select-country",
+  "select-currency": "select-currency",
+  "server-error": "server-error",
+  "surname": "surname",
+  "title": "title",
+  "username": "username"
+}

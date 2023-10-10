@@ -6,6 +6,8 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+
 // Функция для плагинов
 export function buildPlugin({
     paths, isDev, apiUrl, project,
@@ -35,19 +37,28 @@ export function buildPlugin({
                 },
             ],
         }),
+        new ForkTsCheckerWebpackPlugin({
+            typescript: {
+                diagnosticOptions: {
+                    semantic: true,
+                    syntactic: true,
+                },
+                mode: 'write-references',
+            },
+        }),
     ];
 
     if (isDev) {
-        plugins.push(new CircularDependencyPlugin({
-            exclude: /node_modules/,
-            failOnError: true,
-        }));
         plugins.push(new ReactRefreshWebpackPlugin());
         // Обновить приложение без обновления страницы
         plugins.push(new webpack.HotModuleReplacementPlugin());
         // Анализатор bundle
         plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false,
+        }));
+        plugins.push(new CircularDependencyPlugin({
+            exclude: /node_modules/,
+            failOnError: true,
         }));
     }
 
