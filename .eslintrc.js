@@ -55,7 +55,9 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['as', 'to', 'data-testid', 'target', 'justify', 'align', 'direction', 'gap', 'role'],
+                ignoreAttribute: [
+                    'as',
+                    'border', 'to', 'data-testid', 'target', 'justify', 'align', 'direction', 'gap', 'role'],
             },
         ],
         'linebreak-style': 'off',

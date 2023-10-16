@@ -1,4 +1,38 @@
 {
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "2"
+    }
+  ],
   "posts": [
     {
       "id": "1",
@@ -678,8 +712,8 @@
       "first": "Daniil",
       "lastname": "Луценко",
       "age": 23,
-      "currency": "EUR",
-      "country": "Belarus",
+      "currency": "RUB",
+      "country": "Russia",
       "city": "Petrozavodsk",
       "username": "admin",
       "avatar": "https://thedungeonindeepspace.files.wordpress.com/2020/12/img_3600.jpg?w=700"
