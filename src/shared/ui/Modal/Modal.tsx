@@ -1,12 +1,10 @@
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
-import React, {
-    MutableRefObject,
-    ReactNode, useCallback, useEffect, useRef, useState,
-} from 'react';
+import { ReactNode } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';
+import { useModal } from 'shared/lib/hooks/useModal/useModal';
 
 interface ModalProps {
     className?: string;
@@ -16,8 +14,6 @@ interface ModalProps {
     onClose?: () => void;
     lazy?: boolean;
 }
-
-const ANIMATION_DELAY = 300;
 
 // props.lazy -  загрузка модалки лениво - понадобиться для того случае,
 // если какой-то компонент придется подгружать асинхронно - уменьшение бандла
@@ -30,49 +26,17 @@ export const Modal = (props: ModalProps) => {
         lazy,
     } = props;
 
-    const [isClosing, setIsClosing] = useState(false);
-    // будет отвечать, вмонтированна у нас модалка в дом-дерево или нет
-    // useRef работает с MutableRefObject<t> - можно изменять и RefObject<T> - readonly
-    const [isMounted, setIsMounted] = useState(false);
-    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+    const {
+        close,
+        isClosing,
+        isMounted,
+    } = useModal({
+        animationDelay: 300,
+        onClose,
+        isOpen,
+    });
+
     const { theme } = useTheme();
-
-    useEffect(() => {
-        // проверка: если открыт компонент - то мы говорим, что он уже вмонтировался в дерево
-        if (isOpen) {
-            setIsMounted(true);
-        }
-    }, [isOpen]);
-
-    const closeHandler = useCallback(() => {
-        if (onClose) {
-            setIsClosing(true);
-            // current тут read-only, так как ref может быть мутабельным и имутабельным
-            timerRef.current = setTimeout(() => {
-                onClose();
-                setIsClosing(false);
-            }, ANIMATION_DELAY);
-        }
-    }, [onClose]);
-
-    // На каждый ререндер - будут создаваться новые ссылки на функции
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-            closeHandler();
-        }
-    }, [closeHandler]);
-
-    // все асинхронные операции важно очищать в useEffect
-    useEffect(() => {
-        if (isOpen) {
-            window.addEventListener('keydown', onKeyDown);
-        }
-
-        return () => {
-            clearTimeout(timerRef.current);
-            window.removeEventListener('keydown', onKeyDown);
-        };
-    }, [isOpen, onKeyDown]);
 
     const mods: Mods = {
         [cls.opened]: isOpen,
@@ -89,7 +53,7 @@ export const Modal = (props: ModalProps) => {
     return (
         <Portal>
             <div className={classNames(cls.modal, mods, [className, theme, 'app_modal'])}>
-                <Overlay onClick={closeHandler} className={cls.overlay} />
+                <Overlay onClick={close} className={cls.overlay} />
                 <div className={cls.content}>
                     {children}
                 </div>
