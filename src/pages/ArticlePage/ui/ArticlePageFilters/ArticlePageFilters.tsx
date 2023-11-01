@@ -1,11 +1,11 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticlePageFilters.module.scss';
 import {
     ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs, ArticleView, ArticleViewSelector,
-} from 'entities/Article';
+} from '@/entities/Article';
 import { articlePageActions } from '../../model/slices/articlePageSlice';
-import { useAppDispacth } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispacth } from '@/shared/lib/hooks/useAppDispatch';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import {
@@ -15,11 +15,11 @@ import {
     getArticlePageType,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
-import { SortOrder } from 'shared/types';
+import { Card } from '@/shared/ui/Card/Card';
+import { Input } from '@/shared/ui/Input/Input';
+import { SortOrder } from '@/shared/types';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
-import { useDebounse } from 'shared/lib/hooks/useDebounce/useDebounce';
+import { useDebounse } from '@/shared/lib/hooks/useDebounce/useDebounce';
 
 interface ArticlePageFiltersProps {
     className?: string;

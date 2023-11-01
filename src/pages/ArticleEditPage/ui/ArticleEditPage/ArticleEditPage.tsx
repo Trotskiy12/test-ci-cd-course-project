@@ -1,6 +1,6 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleEditPage.module.scss';
 import { Page } from '../../../../widgets/Page/Page';
 import { useParams } from 'react-router-dom';

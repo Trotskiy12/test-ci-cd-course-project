@@ -1,11 +1,11 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 // import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { ArticleList } from 'entities/Article';
-import { Text } from 'shared/ui/Text/Text';
-import { TextSize } from 'shared/const/textConsts';
-import { VStack } from 'shared/ui/Stack';
+import { ArticleList } from '@/entities/Article';
+import { Text } from '@/shared/ui/Text/Text';
+import { TextSize } from '@/shared/const/textConsts';
+import { VStack } from '@/shared/ui/Stack';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
 
 interface ArtcileRecommendationsListProps {
@@ -30,7 +30,6 @@ export const ArtcileRecommendationsList = memo((props: ArtcileRecommendationsLis
             <ArticleList
                 articles={articles}
                 target="_blank"
-                virtualized={false}
             />
         </VStack>
     );

@@ -11,6 +11,8 @@ export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
         modules: [options.paths.src, 'node_modules'],
         // Для каждого модуля, главным файлом будет index
         mainFiles: ['index'],
-        alias: {},
+        alias: {
+            '@': options.paths.src,
+        },
     };
 }

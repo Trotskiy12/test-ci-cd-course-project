@@ -1,4 +1,4 @@
-import { User } from 'entities/User';
+import { User } from '@/entities/User';
 import { ArticleBlockType, ArticleType } from '../consts/articleConsts';
 
 // Родительский блок, так как статьи имеют одинаковые поля указанные ниже

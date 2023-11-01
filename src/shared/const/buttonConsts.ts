@@ -1,4 +1,3 @@
-
 export enum ThemeButton {
     CLEAR = 'clear',
     CLEAR_INVERTED = 'clearInverted',

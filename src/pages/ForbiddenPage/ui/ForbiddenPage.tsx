@@ -1,5 +1,6 @@
+/* eslint-disable i18next/no-literal-string */
 import { memo } from 'react';
-import { Page } from 'widgets/Page/Page';
+import { Page } from '@/widgets/Page/Page';
 
 const ForbiddenPage = memo(() => {
     return (

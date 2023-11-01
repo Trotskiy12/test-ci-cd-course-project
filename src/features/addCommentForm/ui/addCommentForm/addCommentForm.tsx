@@ -1,18 +1,18 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './addCommentForm.module.scss';
-import { Input } from 'shared/ui/Input/Input';
-import { Button } from 'shared/ui/Button/Button';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Input } from '@/shared/ui/Input/Input';
+import { Button } from '@/shared/ui/Button/Button';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
     // getAddCommentFromError,
     getAddCommentFromText,
 } from '../../model/selectors/addCommentFormSelectors';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
-import { useAppDispacth } from 'shared/lib/hooks/useAppDispatch';
+import { useAppDispacth } from '@/shared/lib/hooks/useAppDispatch';
 import { addCommentFormSliceActions, addCommentFormSliceReducer } from '../../model/slices/addCommentFromSlice';
-import { HStack } from 'shared/ui/Stack';
+import { HStack } from '@/shared/ui/Stack';
 
 export interface AddCommentFormProps {
     className?: string;

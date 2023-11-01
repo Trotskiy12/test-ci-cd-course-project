@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '../Button/Button';
-import { ThemeButton } from 'shared/const/buttonConsts';
+import { ThemeButton } from '@/shared/const/buttonConsts';
 import CopyIcon from '../../assets/icons/copy.svg';
 import cls from './Code.module.scss';
 import { useCallback } from 'react';
