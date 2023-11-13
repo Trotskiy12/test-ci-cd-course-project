@@ -61,7 +61,7 @@ module.exports = {
             },
         ],
         'linebreak-style': 'off',
-        'max-len': ['error', { code: 120, ignoreComments: true }],
+        'max-len': ['error', { code: 125, ignoreComments: true }],
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
@@ -70,7 +70,7 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
-        'trotskiy-plugin/path-checker': 'error',
+        'trotskiy-plugin/path-checker': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,
