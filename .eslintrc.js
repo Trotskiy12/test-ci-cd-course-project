@@ -71,7 +71,13 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
         'trotskiy-plugin/path-checker': ['error', { alias: '@' }],
-        'trotskiy-plugin/public-api-imports': ['error', { alias: '@' }],
+        'trotskiy-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,
