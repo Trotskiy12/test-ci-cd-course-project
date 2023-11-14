@@ -765,6 +765,19 @@
       "rate": 5,
       "feedback": "1234",
       "id": "pqhJlLS"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 5,
+      "id": "azJBsad"
+    },
+    {
+      "userId": "1",
+      "articleId": "6",
+      "rate": 5,
+      "feedback": "Java!!!",
+      "id": "Pwq-KVS"
     }
   ],
   "profile-ratings": [

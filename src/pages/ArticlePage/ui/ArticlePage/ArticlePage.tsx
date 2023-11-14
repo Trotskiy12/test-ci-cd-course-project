@@ -8,7 +8,7 @@ import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/Dynam
 import { articlePageReducer } from '../../model/slices/articlePageSlice';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispacth } from '@/shared/lib/hooks/useAppDispatch';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
 import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
