@@ -1,4 +1,8 @@
+import { AppRouteProps } from '@/shared/types/router';
+import { RoutePath, AppRoutes } from '@/shared/const/router';
 import { UserRole } from '@/entities/User';
+import { NotFoundPage } from '@/pages/NotFoundPage';
+
 import { AboutPage } from '@/pages/AboutPage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
@@ -6,33 +10,10 @@ import { ArticleEditPage } from '@/pages/ArticleEditPage';
 import { ArticlePage } from '@/pages/ArticlePage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { MainPage } from '@/pages/MainPage';
-import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
-import { type RouteProps } from 'react-router-dom';
-import { AppRoutes } from '../../const/appRoutesConsts';
-
-export type AppRouteProps = RouteProps & {
-    authOnly?: boolean;
-    roles?: UserRole[];
-}
-
-// Для каждого маршрута из AppRoutes укажем путь до компонентов
-export const RoutePath: Record<AppRoutes, string> = {
-    [AppRoutes.MAIN]: '/',
-    [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.PROFILE]: '/profile/', // + :id
-    [AppRoutes.ARTICLES]: '/articles',
-    [AppRoutes.ARTICLES_DETAILS]: '/articles/', // + :id
-    [AppRoutes.ARTICLES_CREATE]: '/articles/new',
-    [AppRoutes.ARTICLES_EDIT]: '/articles/:id/edit',
-    [AppRoutes.ADMIN_PANEL]: '/admin',
-    [AppRoutes.FORBIDDEN]: '/forbidden',
-    // располагаем в конце списка, так как звездочка будет обработывать все пути
-    // которые не отработали выше
-    [AppRoutes.NOT_FOUND]: '*',
-};
 
 // Объявляем роуты
+
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.MAIN]: {
         path: RoutePath.main,

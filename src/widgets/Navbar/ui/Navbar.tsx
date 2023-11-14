@@ -13,7 +13,7 @@ import { Text } from '@/shared/ui/Text/Text';
 import { TextTheme } from '@/shared/const/textConsts';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { AppLinkTheme } from '@/shared/const/appLinkConsts';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';

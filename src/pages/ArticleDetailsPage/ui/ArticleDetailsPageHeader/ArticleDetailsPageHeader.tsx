@@ -2,7 +2,7 @@
 import { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useNavigate } from 'react-router-dom';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { Button } from '@/shared/ui/Button/Button';
 import { ThemeButton } from '@/shared/const/buttonConsts';
 import { useSelector } from 'react-redux';
