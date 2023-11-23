@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { Theme } from '../consts/consts';
+import { Theme } from '../../const/theme';
 
 export type ThemeContextProps = {
 	theme?: Theme;
@@ -7,5 +7,3 @@ export type ThemeContextProps = {
 };
 
 export const ThemeContext = createContext<ThemeContextProps>({});
-
-export const LOCAL_STORAGE_THEME_KEY = 'theme';

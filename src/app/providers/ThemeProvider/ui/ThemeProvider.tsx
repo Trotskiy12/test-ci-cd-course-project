@@ -1,9 +1,9 @@
 import { useMemo, useState, ReactNode } from 'react';
 import {
-    LOCAL_STORAGE_THEME_KEY,
     ThemeContext,
-} from '../lib/ThemeContext';
-import { Theme } from '../consts/consts';
+} from '../../../../shared/lib/context/ThemeContext';
+import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localstorage';
+import { Theme } from '@/shared/const/theme';
 
 /*
     LocalStorage всегда вернёт сроку, а useState ждет Theme необходимо воспользоваться кастом к типу
