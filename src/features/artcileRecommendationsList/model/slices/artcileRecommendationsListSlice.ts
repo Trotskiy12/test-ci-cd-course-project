@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { ArtcileRecommendationsListSchema } from '../types/artcileRecommendationsListSchema';
 
 const initialState: ArtcileRecommendationsListSchema = {

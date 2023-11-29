@@ -1,20 +1,22 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from '@/shared/lib/classNames/classNames';
-// import { useTranslation } from 'react-i18next';
 import { Suspense, memo, useCallback } from 'react';
-import { Text } from '@/shared/ui/Text';
-import { TextSize } from '@/shared/const/textConsts';
-import { VStack } from '@/shared/ui/Stack';
-import { AddCommentForm } from '@/features/addCommentForm';
-import { CommentList } from '@/entities/Comment';
+import { useSelector } from 'react-redux';
+
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentSlice';
-import { useSelector } from 'react-redux';
+
+import { CommentList } from '@/entities/Comment';
+import { AddCommentForm } from '@/features/addCommentForm';
+import { TextSize } from '@/shared/const/textConsts';
+import { classNames } from '@/shared/lib/classNames/classNames';
+// import { useTranslation } from 'react-i18next';
 import { useAppDispacth } from '@/shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { Loader } from '@/shared/ui/Loader';
+import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 
 interface ArticleDetailsCommentsProps {
     className?: string;

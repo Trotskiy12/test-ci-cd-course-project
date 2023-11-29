@@ -2,10 +2,11 @@ import {
     createEntityAdapter,
     createSlice,
 } from '@reduxjs/toolkit';
-import { ArticleDetailsRecommendationsSchema } from '../types/ArticleDetailsRecommendationsSchema';
+
 import { StateSchema } from '../../../../app/providers/StoreProvider/config/StateSchema';
 import { Article } from '../../../../entities/Article/model/types/article';
 import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { ArticleDetailsRecommendationsSchema } from '../types/ArticleDetailsRecommendationsSchema';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
     // функция получения id, по которому будет нормализация данных

@@ -25,10 +25,34 @@ module.exports = {
         'i18next',
         'react-hooks',
         'trotskiy-plugin',
+        'unused-imports',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
+        'unused-imports/no-unused-imports': 'error',
+        'import/order': [
+            'error',
+            {
+                pathGroups: [
+                    {
+                        pattern: '@/**',
+                        group: 'internal',
+                        position: 'after',
+                    },
+                    {
+                        pattern: './**.module.*',
+                        group: 'internal',
+                        position: 'after',
+                    },
+                ],
+                'newlines-between': 'always',
+                alphabetize: {
+                    order: 'asc',
+                    caseInsensitive: false,
+                },
+            },
+        ],
         indent: [2, 4],
         'react/jsx-filename-extension': [
             2,
@@ -50,7 +74,7 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         'no-tabs': 'off',
-        'import/order': 'off',
+        // 'import/order': 'off',
         'i18next/no-literal-string': [
             'error',
             {

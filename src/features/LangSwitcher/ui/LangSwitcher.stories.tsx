@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { LangSwitcher } from './LangSwitcher';
 
 export default {

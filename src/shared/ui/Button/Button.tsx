@@ -1,9 +1,12 @@
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import {
     ButtonHTMLAttributes, ReactNode, memo,
 } from 'react';
-import cls from './Button.module.scss';
+
 import { ThemeButton, ButtonSize } from '../../const/buttonConsts';
+
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+
+import cls from './Button.module.scss';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     className?: string;

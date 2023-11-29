@@ -1,10 +1,13 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleSortSelector.module.scss';
-import { Select, SelectOption } from '@/shared/ui/Select';
 import { useMemo } from 'react';
-import { SortOrder } from '@/shared/types';
+
 import { ArticleSortField } from '../../model/consts/articleConsts';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { SortOrder } from '@/shared/types';
+import { Select, SelectOption } from '@/shared/ui/Select';
+
+import cls from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {
     className?: string;

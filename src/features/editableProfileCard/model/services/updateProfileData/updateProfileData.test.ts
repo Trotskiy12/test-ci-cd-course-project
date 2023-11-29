@@ -1,8 +1,10 @@
-import { Country } from '@/entities/Country';
+import { ValidateProfileError } from '../../consts/consts';
+
 import { updateProfileData } from './updateProfileData';
+
+import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { TestAsyncFunc } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { ValidateProfileError } from '../../consts/consts';
 
 const data = {
     username: 'admin',

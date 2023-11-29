@@ -1,28 +1,31 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import cls from './EditableProfileCard.module.scss';
 import { memo, useCallback } from 'react';
-import {
-    ProfileCard,
-} from '@/entities/Profile';
-import { Text } from '@/shared/ui/Text';
-import { TextTheme } from '@/shared/const/textConsts';
-import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+
+import { ValidateProfileError } from '../../model/consts/consts';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
+import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
-import { useSelector } from 'react-redux';
-import { useAppDispacth } from '@/shared/lib/hooks/useAppDispatch';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileHeader';
+
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import {
+    ProfileCard,
+} from '@/entities/Profile';
+import { TextTheme } from '@/shared/const/textConsts';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispacth } from '@/shared/lib/hooks/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { VStack } from '@/shared/ui/Stack';
-import { ValidateProfileError } from '../../model/consts/consts';
+import { Text } from '@/shared/ui/Text';
+
+import cls from './EditableProfileCard.module.scss';
 
 interface EditableProfileCardProps {
     className?: string;

@@ -1,7 +1,10 @@
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
-import cls from './Text.module.scss';
 import { memo } from 'react';
+
 import { TextTheme, TextAlign, TextSize } from '../../const/textConsts';
+
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+
+import cls from './Text.module.scss';
 
 interface TextProps {
     className?: string;

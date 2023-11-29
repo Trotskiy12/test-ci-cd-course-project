@@ -1,7 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import ArticlePage from './ArticlePage';
+
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
-import ArticlePage from './ArticlePage';
 
 export default {
     title: 'pages/ArticlePage',

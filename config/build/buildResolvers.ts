@@ -1,4 +1,5 @@
 import type webpack from 'webpack';
+
 import { type BuildOptions } from './types/config';
 
 // Функция для resolvers

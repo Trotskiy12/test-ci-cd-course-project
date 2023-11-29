@@ -1,14 +1,16 @@
 /* eslint-disable i18next/no-literal-string */
 // import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { ArticleList } from '@/entities/Article';
 import { useSelector } from 'react-redux';
-import { getArticles } from '../../model/slices/articlePageSlice';
+
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
+import { getArticles } from '../../model/slices/articlePageSlice';
+
+import { ArticleList } from '@/entities/Article';
 import { Text } from '@/shared/ui/Text';
 
 interface ArticleInfiniteListProps {

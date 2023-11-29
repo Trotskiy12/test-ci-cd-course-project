@@ -1,13 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticlePageFilters.module.scss';
-import {
-    ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs, ArticleView, ArticleViewSelector,
-} from '@/entities/Article';
-import { articlePageActions } from '../../model/slices/articlePageSlice';
-import { useAppDispacth } from '@/shared/lib/hooks/useAppDispatch';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
+
 import {
     getArticlePageOrder,
     getArticlePageSearch,
@@ -15,11 +9,20 @@ import {
     getArticlePageType,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
+import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
+import { articlePageActions } from '../../model/slices/articlePageSlice';
+
+import {
+    ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs, ArticleView, ArticleViewSelector,
+} from '@/entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispacth } from '@/shared/lib/hooks/useAppDispatch';
+import { useDebounse } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { SortOrder } from '@/shared/types';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
-import { SortOrder } from '@/shared/types';
-import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
-import { useDebounse } from '@/shared/lib/hooks/useDebounce/useDebounce';
+
+import cls from './ArticlePageFilters.module.scss';
 
 interface ArticlePageFiltersProps {
     className?: string;

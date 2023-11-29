@@ -1,8 +1,10 @@
 /* eslint-disable i18next/no-literal-string */
-import { RatingCard } from '@/entities/Rating';
 import { memo, useCallback } from 'react';
-import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi';
 import { useSelector } from 'react-redux';
+
+import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi';
+
+import { RatingCard } from '@/entities/Rating';
 import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/ui/Skeleton';
 

@@ -1,10 +1,13 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo } from 'react';
+
+import { ArticleView } from '../../model/consts/articleConsts';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleListItem.module.scss';
 import { Card } from '@/shared/ui/Card';
 import { Skeleton } from '@/shared/ui/Skeleton';
-import { ArticleView } from '../../model/consts/articleConsts';
+
+import cls from './ArticleListItem.module.scss';
 
 interface ArticleListItemSkeletonProps {
     className?: string;

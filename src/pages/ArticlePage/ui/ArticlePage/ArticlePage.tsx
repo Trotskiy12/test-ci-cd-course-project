@@ -1,19 +1,22 @@
 /* eslint-disable max-len */
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticlePage.module.scss';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { articlePageReducer } from '../../model/slices/articlePageSlice';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useAppDispacth } from '@/shared/lib/hooks/useAppDispatch';
-import { Page } from '@/widgets/Page';
+import { useSearchParams } from 'react-router-dom';
+
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
-import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
-import { useSearchParams } from 'react-router-dom';
+import { articlePageReducer } from '../../model/slices/articlePageSlice';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispacth } from '@/shared/lib/hooks/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Page } from '@/widgets/Page';
+
+import cls from './ArticlePage.module.scss';
 
 interface ArticlePageProps {
     className?: string;

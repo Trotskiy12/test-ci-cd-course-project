@@ -1,12 +1,15 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
+
+import { ArticleView } from '../../model/consts/articleConsts';
+
 import ListIcon from '@/shared/assets/icons/list.svg';
 import TiledIcon from '@/shared/assets/icons/tiled.svg';
-import { Icon } from '@/shared/ui/Icon';
-import { Button } from '@/shared/ui/Button';
 import { ThemeButton } from '@/shared/const/buttonConsts';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
+
 import cls from './ArticleViewSelector.module.scss';
-import { ArticleView } from '../../model/consts/articleConsts';
 
 interface ArticleViewSelectorProps {
     className?: string;

@@ -1,10 +1,13 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleImageBlockComponent.module.scss';
 import { memo } from 'react';
+
 import { ArticleImageBlock } from '../../model/types/article';
-import { Text } from '@/shared/ui/Text';
+
 import { TextAlign } from '@/shared/const/textConsts';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text';
+
+import cls from './ArticleImageBlockComponent.module.scss';
 
 interface ArticleImageBlockComponentProps {
     className?: string;

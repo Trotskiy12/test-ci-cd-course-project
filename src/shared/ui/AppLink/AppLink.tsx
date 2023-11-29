@@ -1,8 +1,11 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Link, type LinkProps } from 'react-router-dom';
 import { memo, ReactNode } from 'react';
-import cls from './AppLink.module.scss';
+import { Link, type LinkProps } from 'react-router-dom';
+
 import { AppLinkTheme } from '../../const/appLinkConsts';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+
+import cls from './AppLink.module.scss';
 
 //  Расширяем интерфейс, чтобы можно было использовать пропсы для Link
 type AppLinkProps = {

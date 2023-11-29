@@ -1,22 +1,24 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './Navbar.module.scss';
-import { Button } from '@/shared/ui/Button';
-import { ThemeButton } from '@/shared/const/buttonConsts';
 import { memo, useCallback, useState } from 'react';
-import { LoginModal } from '@/features/AuthByUsername';
 import { useSelector } from 'react-redux';
+
 import {
     getUserAuthData,
 } from '@/entities/User';
-import { Text } from '@/shared/ui/Text';
-import { TextTheme } from '@/shared/const/textConsts';
-import { AppLink } from '@/shared/ui/AppLink';
-import { AppLinkTheme } from '@/shared/const/appLinkConsts';
-import { RoutePath } from '@/shared/const/router';
-import { HStack } from '@/shared/ui/Stack';
-import { NotificationButton } from '@/features/notificationButton';
+import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
+import { NotificationButton } from '@/features/notificationButton';
+import { AppLinkTheme } from '@/shared/const/appLinkConsts';
+import { ThemeButton } from '@/shared/const/buttonConsts';
+import { RoutePath } from '@/shared/const/router';
+import { TextTheme } from '@/shared/const/textConsts';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Button } from '@/shared/ui/Button';
+import { HStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+
+import cls from './Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;

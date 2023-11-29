@@ -1,8 +1,4 @@
-import { AppRouteProps } from '@/shared/types/router';
-import { RoutePath, AppRoutes } from '@/shared/const/router';
 import { UserRole } from '@/entities/User';
-import { NotFoundPage } from '@/pages/NotFoundPage';
-
 import { AboutPage } from '@/pages/AboutPage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
@@ -10,7 +6,10 @@ import { ArticleEditPage } from '@/pages/ArticleEditPage';
 import { ArticlePage } from '@/pages/ArticlePage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { MainPage } from '@/pages/MainPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
+import { RoutePath, AppRoutes } from '@/shared/const/router';
+import { AppRouteProps } from '@/shared/types/router';
 
 // Объявляем роуты
 

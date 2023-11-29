@@ -1,9 +1,11 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from '@/shared/lib/classNames/classNames';
 import type { Comment } from '../../model/types/comment';
-import { Text } from '@/shared/ui/Text';
 import { CommentCard } from '../CommentCard/CommentCard';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+
 // Делаем компонент максимально переиспользуемым
 // Поэтому comments принимаем пропсом
 

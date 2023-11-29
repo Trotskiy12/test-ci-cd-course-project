@@ -1,9 +1,12 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleTextBlockComponent.module.scss';
 import { memo } from 'react';
+
 import { ArticleTextBlock } from '../../model/types/article';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text } from '@/shared/ui/Text';
+
+import cls from './ArticleTextBlockComponent.module.scss';
 
 interface ArticleTextBlockComponentProps {
     className?: string;

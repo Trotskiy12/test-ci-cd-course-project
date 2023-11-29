@@ -3,10 +3,12 @@ import {
     createEntityAdapter,
     createSlice,
 } from '@reduxjs/toolkit';
+
+import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { ArticleDetailsCommentSchema } from '../types/ArticleDetailsCommentSchema';
+
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Comment } from '@/entities/Comment';
-import { ArticleDetailsCommentSchema } from '../types/ArticleDetailsCommentSchema';
-import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 const commentsAdapter = createEntityAdapter<Comment>({
     // функция получения id, по которому будет нормализация данных

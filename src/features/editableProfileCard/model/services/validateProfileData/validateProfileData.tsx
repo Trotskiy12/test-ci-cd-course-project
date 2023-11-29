@@ -1,5 +1,6 @@
-import { Profile } from '@/entities/Profile';
 import { ValidateProfileError } from '../../consts/consts';
+
+import { Profile } from '@/entities/Profile';
 
 // TODO: Доделать валидацию по всем полям
 // TODO: После завершения курса переписать с помощью react-hook-form и yup validate-schema

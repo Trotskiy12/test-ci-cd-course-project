@@ -1,5 +1,6 @@
-import { Project } from 'ts-morph';
 import path from 'path';
+
+import { Project } from 'ts-morph';
 // Инициализируем инстанс класса
 const project = new Project({});
 // Добавляем в переменную все ts и tsx файлы

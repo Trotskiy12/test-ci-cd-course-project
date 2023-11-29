@@ -1,12 +1,14 @@
 /* eslint-disable i18next/no-literal-string */
-import { classNames } from '@/shared/lib/classNames/classNames';
 // import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { ArticleList } from '@/entities/Article';
-import { Text } from '@/shared/ui/Text';
-import { TextSize } from '@/shared/const/textConsts';
-import { VStack } from '@/shared/ui/Stack';
+
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi';
+
+import { ArticleList } from '@/entities/Article';
+import { TextSize } from '@/shared/const/textConsts';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 
 interface ArtcileRecommendationsListProps {
     className?: string;

@@ -1,9 +1,12 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleEditPage.module.scss';
-import { Page } from '../../../../widgets/Page/ui/Page/Page';
 import { useParams } from 'react-router-dom';
+
+import { Page } from '../../../../widgets/Page/ui/Page/Page';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+
+import cls from './ArticleEditPage.module.scss';
 
 interface ArticleEditPageProps {
     className?: string;

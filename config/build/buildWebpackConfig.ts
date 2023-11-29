@@ -1,9 +1,10 @@
 import type webpack from 'webpack';
-import { type BuildOptions } from './types/config';
+
+import { buildDevServer } from './buildDevServer';
 import { buildLoaders } from './buildLoaders';
 import { buildPlugin } from './buildPlugin';
 import { buildResolvers } from './buildResolvers';
-import { buildDevServer } from './buildDevServer';
+import { type BuildOptions } from './types/config';
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
     // Деструктуризация пропса

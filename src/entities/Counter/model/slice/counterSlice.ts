@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { CounterSchema } from '../types/counterSchema';
 // ImmerJs позволяет нам менять state - но линтер ругается на строчки state.value += 1
 // no-param-reassign - противоречит концепции ImmerJs, поэтому в конфиге линтера отключим свойство
