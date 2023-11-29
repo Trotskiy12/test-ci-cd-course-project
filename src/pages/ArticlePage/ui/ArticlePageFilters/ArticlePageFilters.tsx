@@ -15,8 +15,8 @@ import {
     getArticlePageType,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import { Card } from '@/shared/ui/Card/Card';
-import { Input } from '@/shared/ui/Input/Input';
+import { Card } from '@/shared/ui/Card';
+import { Input } from '@/shared/ui/Input';
 import { SortOrder } from '@/shared/types';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
 import { useDebounse } from '@/shared/lib/hooks/useDebounce/useDebounce';

@@ -5,7 +5,7 @@ import { memo, useCallback } from 'react';
 import {
     ProfileCard,
 } from '@/entities/Profile';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { TextTheme } from '@/shared/const/textConsts';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';

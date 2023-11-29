@@ -5,15 +5,15 @@ import cls from './ArticleListItem.module.scss';
 import {
     Article, ArticleTextBlock,
 } from '../../model/types/article';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { Icon } from '../../../../shared/ui/Icon/Icon';
-import { Card } from '@/shared/ui/Card/Card';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Card } from '@/shared/ui/Card';
+import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '../../../../shared/ui/Button/Button';
 import { ThemeButton } from '@/shared/const/buttonConsts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { AppLink } from '@/shared/ui/AppLink';
 import { RoutePath } from '@/shared/const/router';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 

@@ -1,8 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './addCommentForm.module.scss';
-import { Input } from '@/shared/ui/Input/Input';
-import { Button } from '@/shared/ui/Button/Button';
+import { Input } from '@/shared/ui/Input';
+import { Button } from '@/shared/ui/Button';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
     // getAddCommentFromError,

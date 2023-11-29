@@ -8,10 +8,10 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispacth } from '@/shared/lib/hooks/useAppDispatch';
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button';
 import { ThemeButton } from '@/shared/const/buttonConsts';
 import { HStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 
 interface EditableProfileCardHeaderProps {
     className?: string;

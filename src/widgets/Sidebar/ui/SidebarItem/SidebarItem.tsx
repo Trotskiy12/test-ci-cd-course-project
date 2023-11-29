@@ -1,6 +1,6 @@
 import cls from './SidebarItem.module.scss';
 import { useTranslation } from 'react-i18next';
-import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { AppLink } from '@/shared/ui/AppLink';
 import { AppLinkTheme } from '@/shared/const/appLinkConsts';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
