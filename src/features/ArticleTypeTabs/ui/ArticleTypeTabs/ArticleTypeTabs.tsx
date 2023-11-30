@@ -1,7 +1,6 @@
 import { useMemo, useCallback } from 'react';
 
-import { ArticleType } from '../../model/consts/articleConsts';
-
+import { ArticleType } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { TabItem, Tabs } from '@/shared/ui/Tabs';
 

@@ -1,8 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { useMemo } from 'react';
 
-import { ArticleSortField } from '../../model/consts/articleConsts';
-
+import { ArticleSortField } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { SortOrder } from '@/shared/types';
 import { Select, SelectOption } from '@/shared/ui/Select';

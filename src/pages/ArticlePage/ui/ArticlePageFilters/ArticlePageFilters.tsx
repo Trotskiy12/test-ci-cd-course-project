@@ -13,8 +13,11 @@ import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArt
 import { articlePageActions } from '../../model/slices/articlePageSlice';
 
 import {
-    ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs, ArticleView, ArticleViewSelector,
+    ArticleSortField, ArticleType, ArticleView,
 } from '@/entities/Article';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispacth } from '@/shared/lib/hooks/useAppDispatch';
 import { useDebounse } from '@/shared/lib/hooks/useDebounce/useDebounce';
