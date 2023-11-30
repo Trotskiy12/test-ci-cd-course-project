@@ -1,6 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 
+import { getRouteArticlesDetails } from '../../../../shared/const/router';
 import { Button } from '../../../../shared/ui/Button/Button';
 import { Icon } from '../../../../shared/ui/Icon/Icon';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
@@ -11,7 +12,6 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { ThemeButton } from '@/shared/const/buttonConsts';
-import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -62,7 +62,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <div className={cls.footer}>
                         <AppLink
                             target={target}
-                            to={RoutePath.articles_details + article.id}
+                            to={getRouteArticlesDetails(article.id)}
                         >
                             <Button theme={ThemeButton.OUTLINE}>Читать далее...</Button>
                         </AppLink>
@@ -76,7 +76,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     return (
         <AppLink
             target={target}
-            to={RoutePath.articles_details + article.id}
+            to={getRouteArticlesDetails(article.id)}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
         >
             <Card className={cls.card}>

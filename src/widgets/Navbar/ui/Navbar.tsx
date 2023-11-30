@@ -10,7 +10,7 @@ import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
 import { AppLinkTheme } from '@/shared/const/appLinkConsts';
 import { ThemeButton } from '@/shared/const/buttonConsts';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticlesCreate } from '@/shared/const/router';
 import { TextTheme } from '@/shared/const/textConsts';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
@@ -46,7 +46,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 />
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
-                    to={RoutePath.articles_create}
+                    to={getRouteArticlesCreate()}
                     className={cls.createBtn}
                 >
                     Создать статью
