@@ -30,8 +30,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         plugins: buildPlugin(options),
         // Позволяет четко видеть, где в коде ошибка, так как
         // source map сопоставляет наш скомпилированный код с исходным кодом
-        devtool: isDev ? 'inline-source-map' : undefined,
+        devtool: isDev ? 'eval-cheap-module-source-map' : undefined,
         devServer: isDev ? buildDevServer(options) : undefined,
-
     };
 }

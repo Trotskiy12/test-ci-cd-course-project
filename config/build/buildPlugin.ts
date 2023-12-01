@@ -13,6 +13,7 @@ import { BuildOptions } from './types/config';
 export function buildPlugin({
     paths, isDev, apiUrl, project,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
+    const isProd = !isDev;
     const plugins = [
         // Работа с HTML
         new HtmlWebpackPlugin({
@@ -20,23 +21,11 @@ export function buildPlugin({
         }),
         // Прогресс сборки
         new webpack.ProgressPlugin(),
-        new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash:8].css',
-            // Для чанков, которые будут асинхронно подгружаться
-            chunkFilename: 'css/[name].[contenthash:8].css',
-        }),
         // Плагин - прокидывать в приложение глобальные переменные
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
             __PROJECT__: JSON.stringify(project),
-        }),
-        new CopyPlugin({
-            patterns: [
-                {
-                    from: paths.locales, to: paths.buildLocales,
-                },
-            ],
         }),
         new ForkTsCheckerWebpackPlugin({
             typescript: {
@@ -61,6 +50,23 @@ export function buildPlugin({
             exclude: /node_modules/,
             failOnError: true,
         }));
+    }
+
+    if (isProd) {
+        plugins.push(new MiniCssExtractPlugin({
+            filename: 'css/[name].[contenthash:8].css',
+            // Для чанков, которые будут асинхронно подгружаться
+            chunkFilename: 'css/[name].[contenthash:8].css',
+        }));
+        plugins.push(
+            new CopyPlugin({
+                patterns: [
+                    {
+                        from: paths.locales, to: paths.buildLocales,
+                    },
+                ],
+            }),
+        );
     }
 
     return plugins;
