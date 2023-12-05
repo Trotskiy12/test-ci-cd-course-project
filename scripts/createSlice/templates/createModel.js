@@ -1,5 +1,7 @@
 const fs = require('fs/promises');
+
 const resolveRoot = require('../resolveRoot');
+
 const reduxSliceTemplate = require('./reduxSliceTemplate');
 const schemaTypeTemplate = require('./schemaTypeTemplate');
 

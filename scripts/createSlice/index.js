@@ -6,7 +6,7 @@ const layer = process.argv[2];
 const sliceName = process.argv[3];
 
 // слои по FSD
-const layers = ['features', 'entities', 'pages'];
+const layers = ['features', 'entities', 'pages', 'shared'];
 
 // Если не указан слой или его нет в слоях FSD
 if (!layer || !layers.includes(layer)) {
