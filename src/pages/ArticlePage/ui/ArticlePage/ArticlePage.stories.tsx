@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import ArticlePage from './ArticlePage';
 
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 
@@ -10,6 +11,10 @@ export default {
     component: ArticlePage,
     argTypes: {
         backgroundColor: { control: 'color' },
+    },
+    decorators: [StoreDecorator({})],
+    parameters: {
+        loki: { skip: true },
     },
 } as ComponentMeta<typeof ArticlePage>;
 
