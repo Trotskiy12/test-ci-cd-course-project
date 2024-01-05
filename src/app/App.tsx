@@ -8,7 +8,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
-
+// comment for test ci/cd on github
 export const App = () => {
     const { theme } = useTheme();
     const dispatch = useDispatch();
