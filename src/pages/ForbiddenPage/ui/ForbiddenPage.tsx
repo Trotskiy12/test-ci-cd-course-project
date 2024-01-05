@@ -5,7 +5,9 @@ import { Page } from '@/widgets/Page';
 
 const ForbiddenPage = memo(() => {
     return (
-        <Page>
+        <Page
+            data-testid="ForbiddenPage"
+        >
             У вас недостаточно прав на просмотр данной страницы
         </Page>
     );

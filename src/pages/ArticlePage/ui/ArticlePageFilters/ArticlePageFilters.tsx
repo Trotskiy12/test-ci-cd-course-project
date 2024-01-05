@@ -21,7 +21,7 @@ import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispacth } from '@/shared/lib/hooks/useAppDispatch';
 import { useDebounse } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
 

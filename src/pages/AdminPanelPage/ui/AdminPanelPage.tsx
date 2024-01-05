@@ -5,7 +5,9 @@ import { Page } from '@/widgets/Page';
 
 const AdminPanelPage = memo(() => {
     return (
-        <Page>
+        <Page
+            data-testid="AdminPanelPage"
+        >
             Панель администратора
         </Page>
     );
